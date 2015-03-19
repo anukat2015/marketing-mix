@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Marketing Mix Tool | Dozen Digital</title>
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="normalize.css">
+		<link rel="stylesheet" type="text/css" href="foundation.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	</head>
+
+	<body>
+		<div class="row">
+			<div class="large-2 columns">
+				&nbsp;
+			</div>
+			<div class="large-8 columns">
+
+				<form action="/" method="POST" id="quiz">
+
+					<div class="row">
+						<div class="large-12 columns">
+						    <label>Which category best describes your business?
+						    	<select name="categoryInput">
+							        <option value="ecommerce">ECommerce</option>
+							        <option value="community">Community</option>
+							        <option value="saas">SaaS</option>
+							        <option value="content">Content</option>
+							        <option value="enterprise">Enterprise</option>
+							        <option value="local">Local</option>
+							        <option value="services">Services</option>
+							        <option value="marketplace">Marketplace</option>
+							        <option value="app">App</option>
+						        </select>
+							</label>
+					    </div>
+					</div>
+
+					<div class="row">
+						<div class="small-10 medium-11 columns">
+							<label>How expensive is your product?</label>
+							    <div class="range-slider" data-slider data-options="start: 0; end: 10; display_selector: #sliderOutput1;">
+									<span class="range-slider-handle" role="slider" tabindex="0"></span>
+									<span class="range-slider-active-segment"></span>
+									<input type="hidden" name="expensiveness">
+								</div>
+						</div>
+						<div class="small-2 medium-1 columns">
+							<span id="sliderOutput1"></span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="small-10 medium-11 columns">
+							<label>How well-known is your product?</label>
+							    <div class="range-slider" data-slider data-options="start: 0; end: 10; display_selector: #sliderOutput2;">
+									<span class="range-slider-handle" role="slider" tabindex="0"></span>
+									<span class="range-slider-active-segment"></span>
+									<input type="hidden" name="known">
+								</div>
+						</div>
+						<div class="small-2 medium-1 columns">
+							<span id="sliderOutput2"></span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="small-10 medium-11 columns">
+							<label>How would you rate the importance of branding for your product?</label>
+							    <div class="range-slider" data-slider data-options="start: 0; end: 10; display_selector: #sliderOutput3;">
+									<span class="range-slider-handle" role="slider" tabindex="0"></span>
+									<span class="range-slider-active-segment"></span>
+									<input type="hidden" name="brand">
+								</div>
+						</div>
+						<div class="small-2 medium-1 columns">
+							<span id="sliderOutput3"></span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="small-10 medium-11 columns">
+							<label>How large is your budget?</label>
+							    <div class="range-slider" data-slider data-options="start: 0; end: 10; display_selector: #sliderOutput4;">
+									<span class="range-slider-handle" role="slider" tabindex="0"></span>
+									<span class="range-slider-active-segment"></span>
+									<input type="hidden" name="budget">
+								</div>
+						</div>
+						<div class="small-2 medium-1 columns">
+							<span id="sliderOutput4"></span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="small-10 medium-11 columns">
+							<label>How many people at your organization work on marketing the product?</label>
+							    <div class="range-slider" data-slider data-options="start: 0; end: 10; display_selector: #sliderOutput5;">
+									<span class="range-slider-handle" role="slider" tabindex="0"></span>
+									<span class="range-slider-active-segment"></span>
+									<input type="hidden" name="people">
+								</div>
+						</div>
+						<div class="small-2 medium-1 columns">
+							<span id="sliderOutput5"></span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="small-10 medium-11 columns">
+							<label>How focused on local is your product?</label>
+							    <div class="range-slider" data-slider data-options="start: 0; end: 10; display_selector: #sliderOutput6;">
+									<span class="range-slider-handle" role="slider" tabindex="0"></span>
+									<span class="range-slider-active-segment"></span>
+									<input type="hidden" name="local">
+								</div>
+						</div>
+						<div class="small-2 medium-1 columns">
+							<span id="sliderOutput6"></span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="small-10 medium-11 columns">
+							<label>How many pages are there on your site?</label>
+							    <div class="range-slider" data-slider data-options="start: 0; end: 10; display_selector: #sliderOutput7;">
+									<span class="range-slider-handle" role="slider" tabindex="0"></span>
+									<span class="range-slider-active-segment"></span>
+									<input type="hidden" name="pages">
+								</div>
+						</div>
+						<div class="small-2 medium-1 columns">
+							<span id="sliderOutput7"></span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="small-10 medium-11 columns">
+							<label>How would you rate customer affinity for your product?</label>
+							    <div class="range-slider" data-slider data-options="start: 0; end: 10; display_selector: #sliderOutput8;">
+									<span class="range-slider-handle" role="slider" tabindex="0"></span>
+									<span class="range-slider-active-segment"></span>
+									<input type="hidden" name="affinity">
+								</div>
+						</div>
+						<div class="small-2 medium-1 columns">
+							<span id="sliderOutput8"></span>
+						</div>
+					</div>
+
+
+					<div class="row text-center">
+						<button type="submit">Submit</button>
+					</div>
+				</form>
+			</div>
+			<div class="large-2 columns">
+				&nbsp;
+			</div>
+		</div>
+
+		<script src="js/vendor/jquery.js"></script>
+		<script src="js/foundation.min.js"></script>
+		<script src="js/foundation/foundation.slider.js"></script>
+
+		<script>
+			$(document).foundation();
+		</script>
+	</body>
+
+</html>
