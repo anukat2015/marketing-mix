@@ -36,6 +36,7 @@ def adjust_for_businesses(businesses, hash)
 		hash[:referral] += 0;
 		hash[:email] += 10;
 	end
+	return hash
 end
 
 def adjust_for_consumers(consumers, hash)
@@ -56,6 +57,7 @@ def adjust_for_consumers(consumers, hash)
 		hash[:referral] += 5;
 		hash[:email] += 8;
 	end
+	return hash
 end
 
 def adjust_for_branding(branding, hash)
@@ -76,6 +78,7 @@ def adjust_for_branding(branding, hash)
 		hash[:referral] += 0;
 		hash[:email] += 0;
 	end
+	return hash
 end
 
 def adjust_for_local(local, hash)
@@ -96,6 +99,7 @@ def adjust_for_local(local, hash)
 		hash[:referral] += 0;
 		hash[:email] += 0;
 	end
+	return hash
 end
 
 def adjust_for_site(site, hash)
@@ -116,6 +120,7 @@ def adjust_for_site(site, hash)
 		hash[:referral] += 0;
 		hash[:email] += 0;
 	end
+	return hash
 end
 
 def adjust_for_ecommerce(ecommerce, hash)
@@ -136,6 +141,7 @@ def adjust_for_ecommerce(ecommerce, hash)
 		hash[:referral] += 5;
 		hash[:email] += 5;
 	end
+	return hash
 end
 
 def adjust_for_mobile(mobile, hash)
@@ -156,4 +162,79 @@ def adjust_for_mobile(mobile, hash)
 		hash[:referral] += 0;
 		hash[:email] += 0;
 	end
+	return hash
 end
+
+def adjust_for_saas(saas, hash)
+	if saas == "true"
+		hash[:facebook] += 5;
+		hash[:twitter] += 5;
+		hash[:display] += 0;
+		hash[:search] += 5;
+		hash[:retargeting] += 5;
+		hash[:app] += 0;
+		hash[:local] += 0;
+		hash[:seo] += 5;
+		hash[:content] += 5;
+		hash[:social] += 5;
+		hash[:pr] += 0;
+		hash[:direct] += 0;
+		hash[:partners] += 10;
+		hash[:referral] += 10;
+		hash[:email] += 10;
+	end
+	return hash
+end
+
+def adjust_for_contentCreation(contentCreation, hash)
+	if contentCreation == "true"
+		hash[:facebook] += 0;
+		hash[:twitter] += 0;
+		hash[:display] += 0;
+		hash[:search] += 0;
+		hash[:retargeting] += 0;
+		hash[:app] += 0;
+		hash[:local] += 0;
+		hash[:seo] += 10;
+		hash[:content] += 0;
+		hash[:social] += 10;
+		hash[:pr] += 0;
+		hash[:direct] += 0;
+		hash[:partners] += 0;
+		hash[:referral] += 0;
+		hash[:email] += 10;
+	end
+	return hash
+end
+
+def adjust_for_ltv(ltv, hash)
+	if ltv < 10
+		ltvMultiplier = -0.5
+	elsif ltv < 50 && ltv >= 10
+		ltvMultiplier = -0.2
+	elsif ltv < 100 && ltv >= 50
+		ltvMultiplier = 0.2
+	else
+		ltvMultiplier = 0.5
+	end
+	hash[:facebook] *= 1 + ltvMultiplier
+	hash[:twitter] *= 1 + ltvMultiplier
+	hash[:display] *= 1 + ltvMultiplier
+	hash[:search] *= 1 + ltvMultiplier
+	hash[:retargeting] *= 1 + ltvMultiplier
+	hash[:app] *= 1 + ltvMultiplier
+	hash[:local] *= 1 + ltvMultiplier
+	if ltv <= 100
+		hash[:direct] = 0
+	end
+	return hash
+end
+
+def check_if_mobile(mobile, seo)
+	if mobile == "true"
+		seo = 0
+	end
+	return seo
+end
+
+# calculate percentages
