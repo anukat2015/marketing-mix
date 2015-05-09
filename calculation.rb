@@ -15,6 +15,7 @@ def adjust_for_all_answers(answers, final_score_hash)
 	final_score_hash = adjust_for_contentCreation(answers[:contentCreation], final_score_hash)
 	final_score_hash = adjust_for_ltv(answers[:ltv], final_score_hash)
 	final_score_hash[:seo] = check_if_mobile(answers[:mobile], final_score_hash[:seo])
+	final_score_hash = calculate_percentages(final_score_hash)
 	return final_score_hash
 end
 
@@ -237,4 +238,19 @@ def check_if_mobile(mobile, seo)
 	return seo
 end
 
-# calculate percentages
+def calculate_percentages(hash)
+	total_score = hash.values.inject { |a,b| a + b }
+	hash.each do | channel, score |
+		hash[channel] = score / total_score
+	end
+	return hash
+end
+
+def calculate_budget(hash)
+	[:seo, :content, :social, :pr, :direct, :partners, :referral, :email].each { |non_ad_channel| hash.delete(non_ad_channel) }
+	total_budget = hash.values.inject { |a,b| a + b }
+	hash.each do | channel, score |
+		hash[channel] = score / total_budget
+	end
+	return hash
+end
