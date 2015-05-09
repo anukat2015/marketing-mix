@@ -1,60 +1,159 @@
-#Pre-defined values that rank the importance of each channel for each business type (corresponds to values B2:J14 in spreadsheet)
-CHANNEL_WEIGHTS = { :ecommerce => { :paidsocial => 70, :display => 50, :paidsearch => 80, :content => 60, :directsales => 0, :organicsocial => 40, :seo => 80, :pr => 20, :influencer => 60, :local => 0, :referral => 50, :email => 70, :partners => 60 },
-					:community => { :paidsocial => 0, :display => 0, :paidsearch => 0, :content => 70, :directsales => 0, :organicsocial => 70, :seo => 80, :pr => 50, :influencer => 70, :local => 0, :referral => 80, :email => 70, :partners => 30 },
-					:saas => { :paidsocial => 50, :display => 50, :paidsearch => 70, :content => 60, :directsales => 20, :organicsocial => 40, :seo => 60, :pr => 20, :influencer => 60, :local => 0, :referral => 50, :email => 70, :partners => 60 },
-					:content => { :paidsocial => 0, :display => 0, :paidsearch => 0, :content => 90, :directsales => 0, :organicsocial => 80, :seo => 90, :pr => 30, :influencer => 70, :local => 0, :referral => 30, :email => 70, :partners => 60 },
-					:enterprise => { :paidsocial => 10, :display => 30, :paidsearch => 50, :content => 80, :directsales => 90, :organicsocial => 20, :seo => 40, :pr => 60, :influencer => 40, :local => 0, :referral => 10, :email => 60, :partners => 60 },
-					:local => { :paidsocial => 20, :display => 10, :paidsearch => 60, :content => 40, :directsales => 70, :organicsocial => 40, :seo => 70, :pr => 10, :influencer => 10, :local => 90, :referral => 70, :email => 40, :partners => 30 },
-					:services => { :paidsocial => 20, :display => 0, :paidsearch => 30, :content => 50, :directsales => 90, :organicsocial => 20, :seo => 40, :pr => 40, :influencer => 30, :local => 60, :referral => 50, :email => 50, :partners => 20 },
-					:marketplace => { :paidsocial => 60, :display => 30, :paidsearch => 60, :content => 60, :directsales => 20, :organicsocial => 60, :seo => 80, :pr => 60, :influencer => 40, :local => 20, :referral => 80, :email => 60, :partners => 30 },
-					:app => { :paidsocial => 80, :display => 20, :paidsearch => 10, :content => 30, :directsales => 0, :organicsocial => 20, :seo => 10, :pr => 80, :influencer => 50, :local => 10, :referral => 80, :email => 20, :partners => 40 },
-				}
+def calculate_final_score(answers)
+	final_score_hash = { :facebook => 5, :twitter => 5, :display => 5, :search => 5, :retargeting => 5, :app => 0, :local => 0, :seo => 5, :content => 5, :social => 5, :pr => 5, :direct => 5, :partners => 5, :referral => 5, :email => 5 }
+	final_score_hash = adjust_for_all_answers(answers, final_score_hash)
+end
 
-SENSITIVITY = 10
-
-# Calculate final score based on the business category and the ratings for each factor
-def calculate_final_score(category, ratings)
-	final_score_hash = { :paidsocial => 0, :display => 0, :paidsearch => 0, :content => 0, :directsales => 0, :organicsocial => 0, :seo => 0, :pr => 0, :influencer => 0, :local => 0, :referral => 0, :email => 0, :partners => 0 }
-	sum = calculate_sum_of_factor_adjustments(ratings)
-	final_score_hash.each do | channel, score |
-		final_score_hash[channel] = sum[channel] * SENSITIVITY + CHANNEL_WEIGHTS[category.to_sym][channel]
-	end
+def adjust_for_all_answers(answers, final_score_hash)
+	final_score_hash = adjust_for_businesses(answers[:businesses], final_score_hash)
+	final_score_hash = adjust_for_consumers(answers[:consumers], final_score_hash)
+	final_score_hash = adjust_for_branding(answers[:branding], final_score_hash)
+	final_score_hash = adjust_for_local(answers[:local], final_score_hash)
+	final_score_hash = adjust_for_site(answers[:site], final_score_hash)
+	final_score_hash = adjust_for_ecommerce(answers[:ecommerce], final_score_hash)
+	final_score_hash = adjust_for_mobile(answers[:mobile], final_score_hash)
+	final_score_hash = adjust_for_saas(answers[:saas], final_score_hash)
+	final_score_hash = adjust_for_contentCreation(answers[:contentCreation], final_score_hash)
+	final_score_hash = adjust_for_ltv(answers[:ltv], final_score_hash)
+	final_score_hash[:seo] = check_if_mobile(answers[:mobile], final_score_hash[:seo])
 	return final_score_hash
 end
 
-# Pass in hash with ratings of input factors, then calculate the sum of adjustments to make to final score, based on channel
-def calculate_sum_of_factor_adjustments(ratings)
-	channel_sums = { :paidsocial => 0, :display => 0, :paidsearch => 0, :content => 0, :directsales => 0, :organicsocial => 0, :seo => 0, :pr => 0, :influencer => 0, :local => 0, :referral => 0, :email => 0, :partners => 0 }
-	# Adjust sum given rating of expensiveness
-	[:paidsocial, :display, :paidsearch, :pr].each{ |channel| channel_sums[channel] += calculate_offset(ratings[:expensiveness], true) }
-	# Adjust sum given rating of well-knownness
-	[:pr, :influencer].each{ |channel| channel_sums[channel] += calculate_offset(ratings[:known], false) }
-	# Adjust sum given rating of brand importance
-	[:organicsocial, :pr].each{ |channel| channel_sums[channel] += calculate_offset(ratings[:brand], true) }
-	[:seo].each{ |channel| channel_sums[channel] += calculate_offset(ratings[:brand], false) }
-	# Adjust sum given rating of budget size
-	[:paidsocial, :display, :paidsearch].each{ |channel| channel_sums[channel] += calculate_offset(ratings[:budget], true) }
-	[:content, :directsales, :organicsocial, :seo, :influencer, :referral, :email, :partners].each{ |channel| channel_sums[channel] += calculate_offset(ratings[:budget], false) }
-	# Adjust sum given rating of people count
-	[:organicsocial, :influencer].each{ |channel| channel_sums[channel] += calculate_offset(ratings[:people], true) }
-	[:paidsocial, :paidsearch, :seo].each{ |channel| channel_sums[channel] += calculate_offset(ratings[:people], false) }
-	# Adjust sum given rating of local importance
-	[:local].each{ |channel| channel_sums[channel] += calculate_offset(ratings[:local], true) }
-	# Adjust sum given rating of number of pages
-	[:seo].each{ |channel| channel_sums[channel] += calculate_offset(ratings[:pages], true) }
-	# Adjust sum given rating of customer affinity
-	[:referral].each{ |channel| channel_sums[channel] += calculate_offset(ratings[:affinity], true) }
-	return channel_sums
+def adjust_for_businesses(businesses, hash)
+	if businesses == "true"
+		hash[:facebook] += 5;
+		hash[:twitter] += 3;
+		hash[:display] += 2;
+		hash[:search] += 8;
+		hash[:retargeting] += 5;
+		hash[:app] += 0;
+		hash[:local] += 0;
+		hash[:seo] += 5;
+		hash[:content] += 8;
+		hash[:social] += 3;
+		hash[:pr] += 2;
+		hash[:direct] += 15;
+		hash[:partners] += 10;
+		hash[:referral] += 0;
+		hash[:email] += 10;
+	end
 end
 
-# Pass in the rating for a single factor and calculate the offset for the channel
-def calculate_offset(rating, is_directly_proportional)
-	if (is_directly_proportional == true && rating > 5)
-		offset = rating - 5
-	elsif (is_directly_proportional == false && rating < 5)
-		offset = 5 - rating
-	else
-		offset = 0
+def adjust_for_consumers(consumers, hash)
+	if consumers == "true"
+		hash[:facebook] += 7;
+		hash[:twitter] += 3;
+		hash[:display] += 2;
+		hash[:search] += 8;
+		hash[:retargeting] += 5;
+		hash[:app] += 0;
+		hash[:local] += 0;
+		hash[:seo] += 8;
+		hash[:content] += 8;
+		hash[:social] += 8;
+		hash[:pr] += 5;
+		hash[:direct] += 0;
+		hash[:partners] += 5;
+		hash[:referral] += 5;
+		hash[:email] += 8;
 	end
-	return offset
+end
+
+def adjust_for_branding(branding, hash)
+	if branding == "true"
+		hash[:facebook] += 0;
+		hash[:twitter] += 0;
+		hash[:display] += 5;
+		hash[:search] += 0;
+		hash[:retargeting] += 0;
+		hash[:app] += 0;
+		hash[:local] += 0;
+		hash[:seo] += 0;
+		hash[:content] += 5;
+		hash[:social] += 0;
+		hash[:pr] += 5;
+		hash[:direct] += 0;
+		hash[:partners] += 0;
+		hash[:referral] += 0;
+		hash[:email] += 0;
+	end
+end
+
+def adjust_for_local(local, hash)
+	if local == "true"
+		hash[:facebook] += 0;
+		hash[:twitter] += 0;
+		hash[:display] += 0;
+		hash[:search] += 0;
+		hash[:retargeting] += 0;
+		hash[:app] += 0;
+		hash[:local] += 25;
+		hash[:seo] += 0;
+		hash[:content] += 0;
+		hash[:social] += 0;
+		hash[:pr] += 0;
+		hash[:direct] += 0;
+		hash[:partners] += 0;
+		hash[:referral] += 0;
+		hash[:email] += 0;
+	end
+end
+
+def adjust_for_site(site, hash)
+	if site == "true"
+		hash[:facebook] += 0;
+		hash[:twitter] += 0;
+		hash[:display] += 0;
+		hash[:search] += 0;
+		hash[:retargeting] += 0;
+		hash[:app] += 0;
+		hash[:local] += 0;
+		hash[:seo] += 15;
+		hash[:content] += 0;
+		hash[:social] += 0;
+		hash[:pr] += 0;
+		hash[:direct] += 0;
+		hash[:partners] += 0;
+		hash[:referral] += 0;
+		hash[:email] += 0;
+	end
+end
+
+def adjust_for_ecommerce(ecommerce, hash)
+	if ecommerce == "true"
+		hash[:facebook] += 5;
+		hash[:twitter] += 0;
+		hash[:display] += 0;
+		hash[:search] += 5;
+		hash[:retargeting] += 5;
+		hash[:app] += 0;
+		hash[:local] += 0;
+		hash[:seo] += 5;
+		hash[:content] += 5;
+		hash[:social] += 5;
+		hash[:pr] += 0;
+		hash[:direct] += 0;
+		hash[:partners] += 0;
+		hash[:referral] += 5;
+		hash[:email] += 5;
+	end
+end
+
+def adjust_for_mobile(mobile, hash)
+	if mobile == "true"
+		hash[:facebook] += 0;
+		hash[:twitter] += 0;
+		hash[:display] += 0;
+		hash[:search] += 0;
+		hash[:retargeting] += 0;
+		hash[:app] += 50;
+		hash[:local] += 0;
+		hash[:seo] += 0;
+		hash[:content] += 0;
+		hash[:social] += 0;
+		hash[:pr] += 0;
+		hash[:direct] += 0;
+		hash[:partners] += 0;
+		hash[:referral] += 0;
+		hash[:email] += 0;
+	end
 end

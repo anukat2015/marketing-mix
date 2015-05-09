@@ -9,9 +9,8 @@ get '/' do
 end
 
 post '/' do
-	@category = params[:categoryInput]
-	@ratings = { :expensiveness => params[:expensiveness].to_i, :known => params[:known].to_i, :brand => params[:brand].to_i, :budget => params[:budget].to_i, :people => params[:people].to_i, :local => params[:local].to_i, :pages => params[:pages].to_i, :affinity => params[:affinity].to_i }
-	@@results = calculate_final_score(@category,@ratings)
+	@answers = { :businesses => params[:businesses], :consumers => params[:consumers], :branding => params[:branding], :local => params[:local], :site => params[:site], :ecommerce => params[:ecommerce], :mobile => params[:mobile], :saas => params[:saas], :contentCreation => params[:contentCreation], :ltv => params[:ltv].to_i, :budget => params[:budget].to_i }
+	@@results = calculate_final_score(@answers)
 	redirect('/results')
 end
 
