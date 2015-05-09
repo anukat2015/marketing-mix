@@ -10,6 +10,16 @@
 		<link rel="stylesheet" type="text/css" href="normalize.css">
 		<link rel="stylesheet" type="text/css" href="foundation.min.css">
 		<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+		<!-- Load d3 -->
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+		<!-- Load c3.css -->
+		<link href="/c3/c3.css" rel="stylesheet" type="text/css">
+
+		<!-- Load d3.js and c3.js -->
+		<script src="/c3/c3.min.js"></script>
+
 	</head>
 
 	<body>
@@ -23,131 +33,109 @@
 
 					<div class="row">
 						<div class="large-12 columns">
-						    <label>Which category best describes your business?
-						    	<select name="categoryInput">
-							        <option value="ecommerce">ECommerce</option>
-							        <option value="community">Community</option>
-							        <option value="saas">SaaS</option>
-							        <option value="content">Content</option>
-							        <option value="enterprise">Enterprise</option>
-							        <option value="local">Local</option>
-							        <option value="services">Services</option>
-							        <option value="marketplace">Marketplace</option>
-							        <option value="app">App</option>
-						        </select>
-							</label>
-					    </div>
-					</div>
-
-					<div class="row">
-						<div class="small-10 medium-11 columns">
-							<label>How expensive is your product?</label>
-							    <div class="range-slider" data-slider data-options="start: 0; end: 10; display_selector: #sliderOutput1;">
-									<span class="range-slider-handle" role="slider" tabindex="0"></span>
-									<span class="range-slider-active-segment"></span>
-									<input type="hidden" name="expensiveness">
-								</div>
+							Do you sell to businesses?
 						</div>
-						<div class="small-2 medium-1 columns">
-							<span id="sliderOutput1"></span>
+						<div class="large-12 columns">
+							<input type="radio" name="businesses" value="true">Yes
+							<input type="radio" name="businesses" value="false">No
 						</div>
 					</div>
 
 					<div class="row">
-						<div class="small-10 medium-11 columns">
-							<label>How well-known is your product?</label>
-							    <div class="range-slider" data-slider data-options="start: 0; end: 10; display_selector: #sliderOutput2;">
-									<span class="range-slider-handle" role="slider" tabindex="0"></span>
-									<span class="range-slider-active-segment"></span>
-									<input type="hidden" name="known">
-								</div>
+						<div class="large-12 columns">
+							Do you sell to consumers?
 						</div>
-						<div class="small-2 medium-1 columns">
-							<span id="sliderOutput2"></span>
+						<div class="large-12 columns">
+							<input type="radio" name="consumers" value="true">Yes
+							<input type="radio" name="consumers" value="false">No
 						</div>
 					</div>
 
 					<div class="row">
-						<div class="small-10 medium-11 columns">
-							<label>How would you rate the importance of branding for your product?</label>
-							    <div class="range-slider" data-slider data-options="start: 0; end: 10; display_selector: #sliderOutput3;">
-									<span class="range-slider-handle" role="slider" tabindex="0"></span>
-									<span class="range-slider-active-segment"></span>
-									<input type="hidden" name="brand">
-								</div>
+						<div class="large-12 columns">
+							Is strong branding necessary to have a competitive edge in your market?
 						</div>
-						<div class="small-2 medium-1 columns">
-							<span id="sliderOutput3"></span>
+						<div class="large-12 columns">
+							<input type="radio" name="branding" value="true">Yes
+							<input type="radio" name="branding" value="false">No
 						</div>
 					</div>
 
 					<div class="row">
-						<div class="small-10 medium-11 columns">
-							<label>How large is your budget?</label>
-							    <div class="range-slider" data-slider data-options="start: 0; end: 10; display_selector: #sliderOutput4;">
-									<span class="range-slider-handle" role="slider" tabindex="0"></span>
-									<span class="range-slider-active-segment"></span>
-									<input type="hidden" name="budget">
-								</div>
+						<div class="large-12 columns">
+							Is there a local component to your business?
 						</div>
-						<div class="small-2 medium-1 columns">
-							<span id="sliderOutput4"></span>
+						<div class="large-12 columns">
+							<input type="radio" name="local" value="true">Yes
+							<input type="radio" name="local" value="false">No
 						</div>
 					</div>
 
 					<div class="row">
-						<div class="small-10 medium-11 columns">
-							<label>How many people at your organization work on marketing the product?</label>
-							    <div class="range-slider" data-slider data-options="start: 0; end: 10; display_selector: #sliderOutput5;">
-									<span class="range-slider-handle" role="slider" tabindex="0"></span>
-									<span class="range-slider-active-segment"></span>
-									<input type="hidden" name="people">
-								</div>
+						<div class="large-12 columns">
+							Does your site have more than 10 public-facing pages?
 						</div>
-						<div class="small-2 medium-1 columns">
-							<span id="sliderOutput5"></span>
+						<div class="large-12 columns">
+							<input type="radio" name="site" value="true">Yes
+							<input type="radio" name="site" value="false">No
 						</div>
 					</div>
 
 					<div class="row">
-						<div class="small-10 medium-11 columns">
-							<label>How focused on local is your product?</label>
-							    <div class="range-slider" data-slider data-options="start: 0; end: 10; display_selector: #sliderOutput6;">
-									<span class="range-slider-handle" role="slider" tabindex="0"></span>
-									<span class="range-slider-active-segment"></span>
-									<input type="hidden" name="local">
-								</div>
+						<div class="large-12 columns">
+							Is your company an e-commerce website?
 						</div>
-						<div class="small-2 medium-1 columns">
-							<span id="sliderOutput6"></span>
+						<div class="large-12 columns">
+							<input type="radio" name="ecommerce" value="true">Yes
+							<input type="radio" name="ecommerce" value="false">No
 						</div>
 					</div>
 
 					<div class="row">
-						<div class="small-10 medium-11 columns">
-							<label>How many pages are there on your site?</label>
-							    <div class="range-slider" data-slider data-options="start: 0; end: 10; display_selector: #sliderOutput7;">
-									<span class="range-slider-handle" role="slider" tabindex="0"></span>
-									<span class="range-slider-active-segment"></span>
-									<input type="hidden" name="pages">
-								</div>
+						<div class="large-12 columns">
+							Is your company a mobile app?
 						</div>
-						<div class="small-2 medium-1 columns">
-							<span id="sliderOutput7"></span>
+						<div class="large-12 columns">
+							<input type="radio" name="mobile" value="true">Yes
+							<input type="radio" name="mobile" value="false">No
 						</div>
 					</div>
 
 					<div class="row">
-						<div class="small-10 medium-11 columns">
-							<label>How would you rate customer affinity for your product?</label>
-							    <div class="range-slider" data-slider data-options="start: 0; end: 10; display_selector: #sliderOutput8;">
-									<span class="range-slider-handle" role="slider" tabindex="0"></span>
-									<span class="range-slider-active-segment"></span>
-									<input type="hidden" name="affinity">
-								</div>
+						<div class="large-12 columns">
+							Is your company a SaaS company?
 						</div>
-						<div class="small-2 medium-1 columns">
-							<span id="sliderOutput8"></span>
+						<div class="large-12 columns">
+							<input type="radio" name="saas" value="true">Yes
+							<input type="radio" name="saas" value="false">No
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="large-12 columns">
+							Is your company heavily reliant on content creation (user-generated or other)?
+						</div>
+						<div class="large-12 columns">
+							<input type="radio" name="contentCreation" value="true">Yes
+							<input type="radio" name="contentCreation" value="false">No
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="large-12 columns">
+							What is the estimated lifetime value of your customers?
+						</div>
+						<div class="large-12 columns">
+							<input type="number" name="ltv" min="0">
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="large-12 columns">
+							How big is your monthly marketing budget?
+						</div>
+						<div class="large-12 columns">
+							<input type="number" name="budget" min="0">
 						</div>
 					</div>
 
