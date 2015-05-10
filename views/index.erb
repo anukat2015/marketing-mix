@@ -9,7 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" type="text/css" href="normalize.css">
 		<link rel="stylesheet" type="text/css" href="foundation.min.css">
-		<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic' rel='stylesheet' type='text/css'>
 
 		<!-- Load d3 -->
 		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
@@ -23,6 +23,20 @@
 	</head>
 
 	<body>
+		<div class="container title">
+			<div class="row">
+				<div class="large-12 columns content">
+					<h1 class="header">
+						What's My Marketing Mix?
+					</h1>
+					<div id="down">
+						<a href="#q1">
+							<img src="arrow.png">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="row">
 			<div class="large-2 columns">
 				&nbsp;
@@ -36,7 +50,7 @@
 							Do you sell to businesses?
 						</div>
 						<div class="large-12 columns">
-							<input type="radio" name="businesses" value="true">Yes
+							<input type="radio" name="businesses" value="true" checked>Yes
 							<input type="radio" name="businesses" value="false">No
 						</div>
 					</div>
@@ -47,7 +61,7 @@
 						</div>
 						<div class="large-12 columns">
 							<input type="radio" name="consumers" value="true">Yes
-							<input type="radio" name="consumers" value="false">No
+							<input type="radio" name="consumers" value="false" checked>No
 						</div>
 					</div>
 
@@ -56,7 +70,7 @@
 							Is strong branding necessary to have a competitive edge in your market?
 						</div>
 						<div class="large-12 columns">
-							<input type="radio" name="branding" value="true">Yes
+							<input type="radio" name="branding" value="true" checked>Yes
 							<input type="radio" name="branding" value="false">No
 						</div>
 					</div>
@@ -66,7 +80,7 @@
 							Is there a local component to your business?
 						</div>
 						<div class="large-12 columns">
-							<input type="radio" name="local" value="true">Yes
+							<input type="radio" name="local" value="true" checked>Yes
 							<input type="radio" name="local" value="false">No
 						</div>
 					</div>
@@ -76,7 +90,7 @@
 							Does your site have more than 10 public-facing pages?
 						</div>
 						<div class="large-12 columns">
-							<input type="radio" name="site" value="true">Yes
+							<input type="radio" name="site" value="true" checked>Yes
 							<input type="radio" name="site" value="false">No
 						</div>
 					</div>
@@ -86,7 +100,7 @@
 							Is your company an e-commerce website?
 						</div>
 						<div class="large-12 columns">
-							<input type="radio" name="ecommerce" value="true">Yes
+							<input type="radio" name="ecommerce" value="true" checked>Yes
 							<input type="radio" name="ecommerce" value="false">No
 						</div>
 					</div>
@@ -97,7 +111,7 @@
 						</div>
 						<div class="large-12 columns">
 							<input type="radio" name="mobile" value="true">Yes
-							<input type="radio" name="mobile" value="false">No
+							<input type="radio" name="mobile" value="false" checked>No
 						</div>
 					</div>
 
@@ -106,7 +120,7 @@
 							Is your company a SaaS company?
 						</div>
 						<div class="large-12 columns">
-							<input type="radio" name="saas" value="true">Yes
+							<input type="radio" name="saas" value="true" checked>Yes
 							<input type="radio" name="saas" value="false">No
 						</div>
 					</div>
@@ -116,7 +130,7 @@
 							Is your company heavily reliant on content creation (user-generated or other)?
 						</div>
 						<div class="large-12 columns">
-							<input type="radio" name="contentCreation" value="true">Yes
+							<input type="radio" name="contentCreation" value="true" checked>Yes
 							<input type="radio" name="contentCreation" value="false">No
 						</div>
 					</div>
@@ -126,7 +140,7 @@
 							What is the estimated lifetime value of your customers?
 						</div>
 						<div class="large-12 columns">
-							<input type="number" name="ltv" min="0">
+							<input type="number" name="ltv" min="0" value="200">
 						</div>
 					</div>
 
@@ -135,7 +149,7 @@
 							How big is your monthly marketing budget?
 						</div>
 						<div class="large-12 columns">
-							<input type="number" name="budget" min="0">
+							<input type="number" name="budget" min="0" value="10000">
 						</div>
 					</div>
 
