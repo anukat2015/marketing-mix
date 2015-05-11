@@ -7,29 +7,25 @@
 .container {
 	width: 100%;
 	height: 100%;
-	margin-left: auto;
-	margin-right: auto;
 	text-align: center;
+	position: relative;
+	font-size: 3em;
 }
 
 .container.title {
 	background-color: #fffcf5;
 }
 
-.content {
-	margin-top: 25%;
+.wrapper {
+	position: relative;
+	top: 40%;
 }
 
 .header {
-	font-size: 3em;
 	font-family: 'Lato', sans-serif;
 }
 
-#down {
-	margin-top: 2em;
-}
-
-#down a {
+#down a img {
 	-webkit-transition: all 200ms ease-in-out;
 	-moz-transition: all 200ms ease-in-out;
 	-ms-transition: all 200ms ease-in-out;
@@ -37,8 +33,18 @@
 	transition: all 200ms ease-in-out;
 }
 
-#down a:hover {
+#down a img:hover {
 	-webkit-transform: translate3d(0, 5px, 0);
 	-moz-transform: translate3d(0, 5px, 0);
 	-ms-transform: translate3d(0, 5px, 0);
+}
+
+#quiz {
+	position: relative;
+	height: 100%;
+}
+
+#q1 {
+	background-color: #449bb5;
+	color: #ffffff;
 }

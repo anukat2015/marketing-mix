@@ -24,7 +24,7 @@
 
 	<body>
 		<div class="container title">
-			<div class="row">
+			<div class="row wrapper">
 				<div class="large-12 columns content">
 					<h1 class="header">
 						What's My Marketing Mix?
@@ -37,13 +37,119 @@
 				</div>
 			</div>
 		</div>
+
+		<form action="/" method="POST" id="quiz">
+			<div class="container" id="q1">
+				<div class="row wrapper">
+					<div class="large-12 columns content">
+						Do you sell to businesses?
+						<input type="radio" name="businesses" value="true" checked>Yes
+						<input type="radio" name="businesses" value="false">No
+					</div>
+				</div>
+			</div>
+			<div class="container" id="q2">
+				<div class="row wrapper">
+					<div class="large-12 columns content">
+						Do you sell to consumers?
+						<input type="radio" name="consumers" value="true">Yes
+						<input type="radio" name="consumers" value="false" checked>No
+					</div>
+				</div>
+			</div>
+			<div class="container" id="q3">
+				<div class="row wrapper">
+					<div class="large-12 columns content">
+						Is strong branding necessary to have a competitive edge in your market?
+						<input type="radio" name="branding" value="true" checked>Yes
+						<input type="radio" name="branding" value="false">No
+					</div>
+				</div>
+			</div>
+			<div class="container" id="q4">
+				<div class="row wrapper">
+					<div class="large-12 columns content">
+						Is there a local component to your business?
+						<input type="radio" name="local" value="true" checked>Yes
+						<input type="radio" name="local" value="false">No
+					</div>
+				</div>
+			</div>
+			<div class="container" id="q5">
+				<div class="row wrapper">
+					<div class="large-12 columns content">
+						Does your site have more than 10 public-facing pages?
+						<input type="radio" name="site" value="true" checked>Yes
+						<input type="radio" name="site" value="false">No
+					</div>
+				</div>
+			</div>
+			<div class="container" id="q6">
+				<div class="row wrapper">
+					<div class="large-12 columns content">
+						Is your company an e-commerce website?
+						<input type="radio" name="ecommerce" value="true" checked>Yes
+						<input type="radio" name="ecommerce" value="false">No
+					</div>
+				</div>
+			</div>
+			<div class="container" id="q7">
+				<div class="row wrapper">
+					<div class="large-12 columns content">
+						Is your company a mobile app?
+						<input type="radio" name="mobile" value="true">Yes
+						<input type="radio" name="mobile" value="false" checked>No
+					</div>
+				</div>
+			</div>
+			<div class="container" id="q8">
+				<div class="row wrapper">
+					<div class="large-12 columns content">
+						Is your company a SaaS company?
+						<input type="radio" name="saas" value="true" checked>Yes
+						<input type="radio" name="saas" value="false">No
+					</div>
+				</div>
+			</div>
+			<div class="container" id="q9">
+				<div class="row wrapper">
+					<div class="large-12 columns content">
+						Is your company heavily reliant on content creation (user-generated or other)?
+						<input type="radio" name="contentCreation" value="true" checked>Yes
+						<input type="radio" name="contentCreation" value="false">No
+					</div>
+				</div>
+			</div>
+			<div class="container" id="q10">
+				<div class="row wrapper">
+					<div class="large-12 columns content">
+						What is the estimated lifetime value of your customers?
+						<input type="number" name="ltv" min="0" value="200">
+					</div>
+				</div>
+			</div>
+			<div class="container" id="q11">
+				<div class="row wrapper">
+					<div class="large-12 columns content">
+						How big is your monthly marketing budget?
+						<input type="number" name="budget" min="0" value="10000">
+						<div class="row text-center">
+							<button type="submit">Submit</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+
+
+
 		<div class="row">
 			<div class="large-2 columns">
 				&nbsp;
 			</div>
 			<div class="large-8 columns">
 
-				<form action="/" method="POST" id="quiz">
+				<!-- <form action="/" method="POST" id="quiz">
 
 					<div class="row">
 						<div class="large-12 columns">
@@ -157,7 +263,7 @@
 					<div class="row text-center">
 						<button type="submit">Submit</button>
 					</div>
-				</form>
+				</form> -->
 			</div>
 			<div class="large-2 columns">
 				&nbsp;
