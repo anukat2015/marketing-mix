@@ -43,8 +43,12 @@
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						Do you sell to businesses?
-						<input type="radio" name="businesses" value="true" checked>Yes
-						<input type="radio" name="businesses" value="false">No
+						<div>
+							<input type="radio" name="businesses" value="true" id="yes1" checked>
+							<label for="yes1">Yes</label>
+							<input type="radio" name="businesses" value="false" id="no1">
+							<label for="no1">No</label>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -52,8 +56,12 @@
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						Do you sell to consumers?
-						<input type="radio" name="consumers" value="true">Yes
-						<input type="radio" name="consumers" value="false" checked>No
+						<div>
+							<input type="radio" name="consumers" value="true" id="yes2">
+							<label for="yes2">Yes</label>
+							<input type="radio" name="consumers" value="false" checked id="no2">
+							<label for="no2">No</label>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -61,8 +69,12 @@
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						Is strong branding necessary to have a competitive edge in your market?
-						<input type="radio" name="branding" value="true" checked>Yes
-						<input type="radio" name="branding" value="false">No
+						<div>
+							<input type="radio" name="branding" value="true" checked id="yes3">
+							<label for="yes3">Yes</label>
+							<input type="radio" name="branding" value="false" id="no3">
+							<label for="no3">No</label>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -70,8 +82,12 @@
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						Is there a local component to your business?
-						<input type="radio" name="local" value="true" checked>Yes
-						<input type="radio" name="local" value="false">No
+						<div>
+							<input type="radio" name="local" value="true" checked id="yes4">
+							<label for="yes4">Yes</label>
+							<input type="radio" name="local" value="false" id="no4">
+							<label for="no4">No</label>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -79,8 +95,12 @@
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						Does your site have more than 10 public-facing pages?
-						<input type="radio" name="site" value="true" checked>Yes
-						<input type="radio" name="site" value="false">No
+						<div>
+							<input type="radio" name="site" value="true" checked id="yes5">
+							<label for="yes5">Yes</label>
+							<input type="radio" name="site" value="false" id="no5">
+							<label for="no5">No</label>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -88,8 +108,12 @@
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						Is your company an e-commerce website?
-						<input type="radio" name="ecommerce" value="true" checked>Yes
-						<input type="radio" name="ecommerce" value="false">No
+						<div>
+							<input type="radio" name="ecommerce" value="true" checked id="yes6">
+							<label for="yes6">Yes</label>
+							<input type="radio" name="ecommerce" value="false" id="no6">
+							<label for="no6">No</label>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -97,8 +121,12 @@
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						Is your company a mobile app?
-						<input type="radio" name="mobile" value="true">Yes
-						<input type="radio" name="mobile" value="false" checked>No
+						<div>
+							<input type="radio" name="mobile" value="true" id="yes7">
+							<label for="yes7">Yes</label>
+							<input type="radio" name="mobile" value="false" checked id="no7">
+							<label for="no7">No</label>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -106,8 +134,12 @@
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						Is your company a SaaS company?
-						<input type="radio" name="saas" value="true" checked>Yes
-						<input type="radio" name="saas" value="false">No
+						<div>
+							<input type="radio" name="saas" value="true" checked id="yes8">
+							<label for="yes8">Yes</label>
+							<input type="radio" name="saas" value="false" id="no8">
+							<label for="no8">No</label>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -115,8 +147,12 @@
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						Is your company heavily reliant on content creation (user-generated or other)?
-						<input type="radio" name="contentCreation" value="true" checked>Yes
-						<input type="radio" name="contentCreation" value="false">No
+						<div>
+							<input type="radio" name="contentCreation" value="true" checked id="yes9">
+							<label for="yes9">Yes</label>
+							<input type="radio" name="contentCreation" value="false" id="no9">
+							<label for="no9">No</label>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -124,7 +160,9 @@
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						What is the estimated lifetime value of your customers?
-						<input type="number" name="ltv" min="0" value="200">
+						<div>
+							<input type="number" name="ltv" min="0" value="200">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -132,9 +170,11 @@
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						How big is your monthly marketing budget?
-						<input type="number" name="budget" min="0" value="10000">
-						<div class="row text-center">
-							<button type="submit">Submit</button>
+						<div>
+							<input type="number" name="budget" min="0" value="10000">
+							<div class="row text-center">
+								<button type="submit">Submit</button>
+							</div>
 						</div>
 					</div>
 				</div>
