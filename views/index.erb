@@ -9,7 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" type="text/css" href="normalize.css">
 		<link rel="stylesheet" type="text/css" href="foundation.min.css">
-		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
 		<!-- Load d3 -->
 		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
@@ -23,6 +23,34 @@
 	</head>
 
 	<body>
+		<div data-magellan-expedition="fixed" id="bar-wrapper">
+			<nav class="top-bar" data-topbar role="navigation">
+				<ul class="title-area">
+					<li class="name">
+						<a href="http://www.dozendigital.com"><img src="dozen-logo.png"></a>
+					</li>
+				</ul>
+
+				<section class="top-bar-section">
+				    <ul class="right">
+				    	<dl class="sub-nav">
+							<li><dd data-magellan-arrival="q1"><a href="#q1">1</a></dd></li>
+							<li><dd data-magellan-arrival="q2"><a href="#q2">2</a></dd></li>
+							<li><dd data-magellan-arrival="q3"><a href="#q3">3</a></dd></li>
+							<li><dd data-magellan-arrival="q4"><a href="#q4">4</a></dd></li>
+							<li><dd data-magellan-arrival="q5"><a href="#q5">5</a></dd></li>
+							<li><dd data-magellan-arrival="q6"><a href="#q6">6</a></dd></li>
+							<li><dd data-magellan-arrival="q7"><a href="#q7">7</a></dd></li>
+							<li><dd data-magellan-arrival="q8"><a href="#q8">8</a></dd></li>
+							<li><dd data-magellan-arrival="q9"><a href="#q9">9</a></dd></li>
+							<li><dd data-magellan-arrival="q10"><a href="#q10">10</a></dd></li>
+							<li><dd data-magellan-arrival="q11"><a href="#q11">11</a></dd></li>
+						</dl>
+				    </ul>
+				</section>
+			</nav>
+		</div>
+
 		<div class="container title">
 			<div class="row wrapper">
 				<div class="large-12 columns content">
@@ -39,10 +67,11 @@
 		</div>
 
 		<form action="/" method="POST" id="quiz">
-			<div class="container" id="q1">
+			<div class="container" id="q1" data-magellan-destination="q1">
+				<a name="q1"></a>
 				<div class="row wrapper">
 					<div class="large-12 columns content">
-						Do you sell to businesses?
+						<span class="question">Do you sell to businesses?</span>
 						<div>
 							<input type="radio" name="businesses" value="true" id="yes1" checked>
 							<label for="yes1">Yes</label>
@@ -52,10 +81,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q2">
+			<div class="container" id="q2" data-magellan-destination="q2">
+				<a name="q2"></a>
 				<div class="row wrapper">
 					<div class="large-12 columns content">
-						Do you sell to consumers?
+						<span class="question">Do you sell to consumers?</span>
 						<div>
 							<input type="radio" name="consumers" value="true" id="yes2">
 							<label for="yes2">Yes</label>
@@ -65,10 +95,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q3">
+			<div class="container" id="q3" data-magellan-destination="q3">
+				<a name="q3"></a>
 				<div class="row wrapper">
 					<div class="large-12 columns content">
-						Is strong branding necessary to have a competitive edge in your market?
+						<span class="question">Is strong branding important in your market?</span>
 						<div>
 							<input type="radio" name="branding" value="true" checked id="yes3">
 							<label for="yes3">Yes</label>
@@ -78,10 +109,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q4">
+			<div class="container" id="q4" data-magellan-destination="q4">
+				<a name="q4"></a>
 				<div class="row wrapper">
 					<div class="large-12 columns content">
-						Is there a local component to your business?
+						<span class="question">Is there a strong local component to your business?</span>
 						<div>
 							<input type="radio" name="local" value="true" checked id="yes4">
 							<label for="yes4">Yes</label>
@@ -91,10 +123,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q5">
+			<div class="container" id="q5" data-magellan-destination="q5">
+				<a name="q5"></a>
 				<div class="row wrapper">
 					<div class="large-12 columns content">
-						Does your site have more than 10 public-facing pages?
+						<span class="question">Does your site have more than 10 pages?</span>
 						<div>
 							<input type="radio" name="site" value="true" checked id="yes5">
 							<label for="yes5">Yes</label>
@@ -104,10 +137,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q6">
+			<div class="container" id="q6" data-magellan-destination="q6">
+				<a name="q6"></a>
 				<div class="row wrapper">
 					<div class="large-12 columns content">
-						Is your company an e-commerce website?
+						<span class="question">Are you running an e-commerce website?</span>
 						<div>
 							<input type="radio" name="ecommerce" value="true" checked id="yes6">
 							<label for="yes6">Yes</label>
@@ -117,10 +151,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q7">
+			<div class="container" id="q7" data-magellan-destination="q7">
+				<a name="q7"></a>
 				<div class="row wrapper">
 					<div class="large-12 columns content">
-						Is your company a mobile app?
+						<span class="question">Is your product a mobile app?</span>
 						<div>
 							<input type="radio" name="mobile" value="true" id="yes7">
 							<label for="yes7">Yes</label>
@@ -130,10 +165,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q8">
+			<div class="container" id="q8" data-magellan-destination="q8">
+				<a name="q8"></a>
 				<div class="row wrapper">
 					<div class="large-12 columns content">
-						Is your company a SaaS company?
+						<span class="question">Is your product a SaaS product?</span>
 						<div>
 							<input type="radio" name="saas" value="true" checked id="yes8">
 							<label for="yes8">Yes</label>
@@ -143,10 +179,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q9">
+			<div class="container" id="q9" data-magellan-destination="q9">
+				<a name="q9"></a>
 				<div class="row wrapper">
 					<div class="large-12 columns content">
-						Is your company heavily reliant on content creation (user-generated or other)?
+						<span class="question">Does your product or service rely heavily on content creation?</span>
 						<div>
 							<input type="radio" name="contentCreation" value="true" checked id="yes9">
 							<label for="yes9">Yes</label>
@@ -156,163 +193,59 @@
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q10">
+			<div class="container" id="q10" data-magellan-destination="q10">
+				<a name="q10"></a>
 				<div class="row wrapper">
 					<div class="large-12 columns content">
-						What is the estimated lifetime value of your customers?
-						<div>
-							<input type="number" name="ltv" min="0" value="200">
+						<span class="question">What is the estimated lifetime value of your customers?</span>
+						<div class="row">
+							<div class="large-5 medium-5 small-3 columns">&nbsp;</div>
+							<div class="large-2 medium-2 small-6 columns">
+								<div class="row collapse">
+									<div class="small-3 large-2 columns">
+										<span class="prefix">$</span>
+									</div>
+									<div class="small-9 large-10 columns">
+										<input type="number" name="ltv" min="0" value="200">
+									</div>
+								</div>
+							</div>
+							<div class="large-5 medium-5 small-3 columns">&nbsp;</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q11">
+			<div class="container" id="q11" data-magellan-destination="q11">
+				<a name="q11"></a>
 				<div class="row wrapper">
 					<div class="large-12 columns content">
-						How big is your monthly marketing budget?
-						<div>
-							<input type="number" name="budget" min="0" value="10000">
-							<div class="row text-center">
-								<button type="submit">Submit</button>
+						<span class="question">What is your monthly marketing budget?</span>
+						<div class="row">
+							<div class="large-5 medium-5 small-3 columns">&nbsp;</div>
+							<div class="large-2 medium-2 small-6 columns">
+								<div class="row collapse">
+									<div class="small-3 large-2 columns">
+										<span class="prefix">$</span>
+									</div>
+									<div class="small-9 large-10 columns">
+										<input type="number" name="budget" min="0" value="10000">
+									</div>
+								</div>
 							</div>
+							<div class="large-5 medium-5 small-3 columns">&nbsp;</div>
+						</div>
+						<div class="row text-center">
+							<button type="submit">Give Me My Results!</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</form>
 
-
-
-		<div class="row">
-			<div class="large-2 columns">
-				&nbsp;
-			</div>
-			<div class="large-8 columns">
-
-				<!-- <form action="/" method="POST" id="quiz">
-
-					<div class="row">
-						<div class="large-12 columns">
-							Do you sell to businesses?
-						</div>
-						<div class="large-12 columns">
-							<input type="radio" name="businesses" value="true" checked>Yes
-							<input type="radio" name="businesses" value="false">No
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="large-12 columns">
-							Do you sell to consumers?
-						</div>
-						<div class="large-12 columns">
-							<input type="radio" name="consumers" value="true">Yes
-							<input type="radio" name="consumers" value="false" checked>No
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="large-12 columns">
-							Is strong branding necessary to have a competitive edge in your market?
-						</div>
-						<div class="large-12 columns">
-							<input type="radio" name="branding" value="true" checked>Yes
-							<input type="radio" name="branding" value="false">No
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="large-12 columns">
-							Is there a local component to your business?
-						</div>
-						<div class="large-12 columns">
-							<input type="radio" name="local" value="true" checked>Yes
-							<input type="radio" name="local" value="false">No
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="large-12 columns">
-							Does your site have more than 10 public-facing pages?
-						</div>
-						<div class="large-12 columns">
-							<input type="radio" name="site" value="true" checked>Yes
-							<input type="radio" name="site" value="false">No
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="large-12 columns">
-							Is your company an e-commerce website?
-						</div>
-						<div class="large-12 columns">
-							<input type="radio" name="ecommerce" value="true" checked>Yes
-							<input type="radio" name="ecommerce" value="false">No
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="large-12 columns">
-							Is your company a mobile app?
-						</div>
-						<div class="large-12 columns">
-							<input type="radio" name="mobile" value="true">Yes
-							<input type="radio" name="mobile" value="false" checked>No
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="large-12 columns">
-							Is your company a SaaS company?
-						</div>
-						<div class="large-12 columns">
-							<input type="radio" name="saas" value="true" checked>Yes
-							<input type="radio" name="saas" value="false">No
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="large-12 columns">
-							Is your company heavily reliant on content creation (user-generated or other)?
-						</div>
-						<div class="large-12 columns">
-							<input type="radio" name="contentCreation" value="true" checked>Yes
-							<input type="radio" name="contentCreation" value="false">No
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="large-12 columns">
-							What is the estimated lifetime value of your customers?
-						</div>
-						<div class="large-12 columns">
-							<input type="number" name="ltv" min="0" value="200">
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="large-12 columns">
-							How big is your monthly marketing budget?
-						</div>
-						<div class="large-12 columns">
-							<input type="number" name="budget" min="0" value="10000">
-						</div>
-					</div>
-
-
-					<div class="row text-center">
-						<button type="submit">Submit</button>
-					</div>
-				</form> -->
-			</div>
-			<div class="large-2 columns">
-				&nbsp;
-			</div>
-		</div>
-
 		<script src="js/vendor/jquery.js"></script>
 		<script src="js/foundation.min.js"></script>
 		<script src="js/foundation/foundation.slider.js"></script>
+		<script src="js/foundation/foundation.magellan.js"></script>
 
 		<script>
 			$(document).foundation();
