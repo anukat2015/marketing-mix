@@ -1,8 +1,5 @@
 require 'sinatra'
-require 'sinatra/reloader'
 require './calculation.rb'
-
-require 'pry-byebug'
 
 get '/' do
 	erb :index
