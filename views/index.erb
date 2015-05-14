@@ -30,24 +30,6 @@
 						<a href="http://www.dozendigital.com"><img src="dozen-logo.png"></a>
 					</li>
 				</ul>
-
-				<section class="top-bar-section">
-				    <ul class="right">
-				    	<dl class="sub-nav">
-							<li><dd data-magellan-arrival="q1"><a href="#q1">1</a></dd></li>
-							<li><dd data-magellan-arrival="q2"><a href="#q2">2</a></dd></li>
-							<li><dd data-magellan-arrival="q3"><a href="#q3">3</a></dd></li>
-							<li><dd data-magellan-arrival="q4"><a href="#q4">4</a></dd></li>
-							<li><dd data-magellan-arrival="q5"><a href="#q5">5</a></dd></li>
-							<li><dd data-magellan-arrival="q6"><a href="#q6">6</a></dd></li>
-							<li><dd data-magellan-arrival="q7"><a href="#q7">7</a></dd></li>
-							<li><dd data-magellan-arrival="q8"><a href="#q8">8</a></dd></li>
-							<li><dd data-magellan-arrival="q9"><a href="#q9">9</a></dd></li>
-							<li><dd data-magellan-arrival="q10"><a href="#q10">10</a></dd></li>
-							<li><dd data-magellan-arrival="q11"><a href="#q11">11</a></dd></li>
-						</dl>
-				    </ul>
-				</section>
 			</nav>
 		</div>
 
@@ -58,17 +40,14 @@
 						What's My Marketing Mix?
 					</h1>
 					<div id="down">
-						<a href="#q1">
-							<img src="arrow.png">
-						</a>
+						<img src="arrow.png" id="arrow">
 					</div>
 				</div>
 			</div>
 		</div>
 
 		<form action="/" method="POST" id="quiz">
-			<div class="container" id="q1" data-magellan-destination="q1">
-				<a name="q1"></a>
+			<div class="container" id="q1">
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						<span class="question">Do you sell to businesses?</span>
@@ -81,8 +60,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q2" data-magellan-destination="q2">
-				<a name="q2"></a>
+			<div class="container" id="q2">
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						<span class="question">Do you sell to consumers?</span>
@@ -95,8 +73,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q3" data-magellan-destination="q3">
-				<a name="q3"></a>
+			<div class="container" id="q3">
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						<span class="question">Is strong branding important in your market?</span>
@@ -109,8 +86,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q4" data-magellan-destination="q4">
-				<a name="q4"></a>
+			<div class="container" id="q4">
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						<span class="question">Is there a strong local component to your business?</span>
@@ -123,8 +99,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q5" data-magellan-destination="q5">
-				<a name="q5"></a>
+			<div class="container" id="q5">
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						<span class="question">Does your site have more than 10 pages?</span>
@@ -137,8 +112,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q6" data-magellan-destination="q6">
-				<a name="q6"></a>
+			<div class="container" id="q6">
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						<span class="question">Are you running an e-commerce website?</span>
@@ -151,8 +125,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q7" data-magellan-destination="q7">
-				<a name="q7"></a>
+			<div class="container" id="q7">
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						<span class="question">Is your product a mobile app?</span>
@@ -165,8 +138,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q8" data-magellan-destination="q8">
-				<a name="q8"></a>
+			<div class="container" id="q8">
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						<span class="question">Is your product a SaaS product?</span>
@@ -179,8 +151,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q9" data-magellan-destination="q9">
-				<a name="q9"></a>
+			<div class="container" id="q9">
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						<span class="question">Does your product or service rely heavily on content creation?</span>
@@ -193,8 +164,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q10" data-magellan-destination="q10">
-				<a name="q10"></a>
+			<div class="container" id="q10">
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						<span class="question">What is the estimated lifetime value of your customers?</span>
@@ -209,14 +179,14 @@
 										<input type="number" name="ltv" min="0" value="200">
 									</div>
 								</div>
+							<div class="button" id="next">Next</div>
 							</div>
 							<div class="large-5 medium-5 small-3 columns">&nbsp;</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="container" id="q11" data-magellan-destination="q11">
-				<a name="q11"></a>
+			<div class="container" id="q11">
 				<div class="row wrapper">
 					<div class="large-12 columns content">
 						<span class="question">What is your monthly marketing budget?</span>
@@ -245,7 +215,7 @@
 		<script src="js/vendor/jquery.js"></script>
 		<script src="js/foundation.min.js"></script>
 		<script src="js/foundation/foundation.slider.js"></script>
-		<script src="js/foundation/foundation.magellan.js"></script>
+		<script src="js/scroll.js"></script>
 
 		<script>
 			$(document).foundation();

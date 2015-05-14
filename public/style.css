@@ -40,15 +40,17 @@
 	font-family: 'Montserrat', sans-serif;
 }
 
-#down a img {
+#down img {
 	-webkit-transition: all 200ms ease-in-out;
 	-moz-transition: all 200ms ease-in-out;
 	-ms-transition: all 200ms ease-in-out;
 	-o-transition: all 200ms ease-in-out;
 	transition: all 200ms ease-in-out;
+	cursor: pointer;
+	cursor: hand;
 }
 
-#down a img:hover {
+#down img:hover {
 	-webkit-transform: translate3d(0, 5px, 0);
 	-moz-transform: translate3d(0, 5px, 0);
 	-ms-transform: translate3d(0, 5px, 0);
@@ -95,6 +97,10 @@ label {
 	text-transform: uppercase;
 }
 
+label a {
+	color: #4d4d4d;
+}
+
 input[type=radio] {
 	display:none;
 }
@@ -116,6 +122,10 @@ button[type=submit] {
 	margin-top: 5em;
 }
 
+.results-header {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2rem;
+}
 
 @media only screen and (max-width: 40em) {
 

@@ -15,9 +15,28 @@
 	</head>
 
 	<body>
-		<div class="row">
-			<div id="score_chart" class="large-6 columns"></div>
-			<div id="budget_chart" class="large-6 columns"></div>
+		<div data-magellan-expedition="fixed" id="bar-wrapper">
+			<nav class="top-bar" data-topbar role="navigation">
+				<ul class="title-area">
+					<li class="name">
+						<a href="http://www.dozendigital.com"><img src="dozen-logo.png"></a>
+					</li>
+				</ul>
+
+			</nav>
+		</div>
+		<div class="container title">
+			<div class="row text-center">
+				<div class="large-6 columns">
+					<h1 class="results-header">Marketing Mix</h1>
+					<div id="score_chart"></div>
+				</div>
+				<div class="large-6 columns">
+					<h1 class="results-header">Advertising Spend</h1>
+					<div id="budget_chart"></div>
+				</div>
+			</div>
+			<a href="/" class="button">Back</a>
 		</div>
 
 		<script src="js/vendor/jquery.js"></script>
