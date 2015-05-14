@@ -247,11 +247,11 @@ def calculate_percentages(hash)
 	return hash
 end
 
-def calculate_budget(hash, budget)
-	[:seo, :content, :social, :pr, :direct, :partners, :referral, :email].each { |non_ad_channel| hash.delete(non_ad_channel) }
-	total_budget = hash.values.inject { |a,b| a + b }
-	hash.each do | channel, score |
-		hash[channel] = (score / total_budget * budget).round
-	end
-	return hash
-end
+# def calculate_budget(hash, budget)
+# 	[:seo, :content, :social, :pr, :direct, :partners, :referral, :email].each { |non_ad_channel| hash.delete(non_ad_channel) }
+# 	total_budget = hash.values.inject { |a,b| a + b }
+# 	hash.each do | channel, score |
+# 		hash[channel] = (score / total_budget * budget).round
+# 	end
+# 	return hash
+# end

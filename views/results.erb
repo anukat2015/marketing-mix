@@ -15,25 +15,20 @@
 	</head>
 
 	<body>
-		<div data-magellan-expedition="fixed" id="bar-wrapper">
-			<nav class="top-bar" data-topbar role="navigation">
+		<div class="fixed">
+			<nav class="top-bar" role="navigation">
 				<ul class="title-area">
 					<li class="name">
 						<a href="http://www.dozendigital.com"><img src="dozen-logo.png"></a>
 					</li>
 				</ul>
-
 			</nav>
 		</div>
-		<div class="container title">
+		<div class="container results">
 			<div class="row text-center">
-				<div class="large-6 columns">
+				<div class="large-12 columns">
 					<h1 class="results-header">Marketing Mix</h1>
 					<div id="score_chart"></div>
-				</div>
-				<div class="large-6 columns">
-					<h1 class="results-header">Advertising Spend</h1>
-					<div id="budget_chart"></div>
 				</div>
 			</div>
 			<a href="/" class="button">Back</a>
@@ -85,53 +80,6 @@
 				  label: {
 				    show: false
 				  }
-				}
-			});
-
-			setTimeout(function () {
-			    chart.unload({
-			        ids: 'data1'
-			    });
-			    chart.unload({
-			        ids: 'data2'
-			    });
-			}, 2500);
-
-			var chart2 = c3.generate({
-				bindto: "#budget_chart",
-			    data: {
-			        columns: [
-			            ["Facebook Advertising", <%= budget[:facebook] %>],
-			            ["Twitter Advertising", <%= budget[:twitter] %>],
-			            ["Display/Banner Advertising", <%= budget[:display] %>],
-			            ["Search Advertising", <%= budget[:search] %>],
-			            ["Retargeting", <%= budget[:retargeting] %>],
-			            ["Mobile App Install Advertising", <%= budget[:app] %>],
-			            ["Local Advertising", <%= budget[:local] %>],
-			        ],
-			        type : 'donut',
-			        onclick: function (d, i) { console.log("onclick", d, i); },
-			        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-			        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
-			    },
-			    transition: {
-		        	duration: 0
-		        },
-		        legend: {
-		        	position: 'right'
-		        },
-		        donut: {
-				  label: {
-				    show: false
-				  }
-				},
-				tooltip: {
-					format: {
-						value: function (value, ratio, id, index) {
-							var format = d3.format(',')
-							return "$" + format(value);
-						}
-					}
 				}
 			});
 

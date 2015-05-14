@@ -8,15 +8,54 @@
 	height: 80%;
 	margin-left: 20px;
 	margin-top: 5px;
-}
-
-#bar-wrapper {
-	padding: 0px;
+	margin-bottom: 0px;
 }
 
 .sub-nav li {
 	width: 30px;
 	margin-left: 0px;
+}
+
+.progress-wrapper {
+	position: relative;
+}
+
+progress {
+  /* Positioning */
+  left: 0;
+  top: 0;
+  position: absolute;
+
+  /* Dimensions */
+  width: 100%;
+  height: 6px;
+
+  /* Reset the appearance */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+
+  /* Get rid of the default border in Firefox/Opera. */
+  border: none;
+
+  /* Progress bar container for Firefox/IE10+ */
+  background-color: transparent;
+
+  /* Progress bar value for IE10+ */
+  color: #f1c40f;
+
+}
+
+progress::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+progress::-webkit-progress-value {
+  background-color: #f1c40f;
+}
+
+progress::-moz-progress-bar {
+  background-color: #f1c40f;
 }
 
 .container {
@@ -29,6 +68,11 @@
 
 .container.title {
 	background-color: #fffcf5;
+}
+
+.container.results {
+	background-color: #fffcf5;
+	padding-top: 5rem;
 }
 
 .wrapper {
@@ -61,7 +105,7 @@
 	height: 100%;
 }
 
-#q1, #q6, #q11 {
+#q1, #q6 {
 	background-color: #449bb5;
 	color: #ffffff;
 }
@@ -125,6 +169,11 @@ button[type=submit] {
 .results-header {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 2rem;
+}
+
+#score_chart {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
 }
 
 @media only screen and (max-width: 40em) {
