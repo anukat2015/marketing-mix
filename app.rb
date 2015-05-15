@@ -12,5 +12,5 @@ post '/' do
 end
 
 get '/results' do
-	erb :results, :locals => { :results => @@results, :budget => @@budget }
+	erb :results, :locals => { :results => @@results }
 end
