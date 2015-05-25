@@ -1,5 +1,5 @@
 def calculate_final_score(answers)
-	final_score_hash = { :facebook => 5, :twitter => 5, :display => 5, :search => 5, :retargeting => 5, :app => 0, :local => 0, :seo => 5, :content => 5, :social => 5, :pr => 5, :direct => 5, :partners => 5, :referral => 5, :email => 5 }
+	final_score_hash = { :facebook => { :sum => 5, :name => "Facebook Advertising" }, :twitter => { :sum => 5, :name => "Twitter Advertising" }, :display => { :sum => 5, :name => "Display/Banner Advertising" }, :search => { :sum => 5, :name => "Search Advertising" }, :retargeting => { :sum => 5, :name => "Retargeting" }, :app => { :sum => 0, :name => "Mobile App Install Advertising" }, :local => { :sum => 0, :name => "Local Advertising" }, :seo => { :sum => 5, :name => "SEO" }, :content => { :sum => 5, :name => "Content Marketing" }, :social => { :sum => 5, :name => "Social Media and Community" }, :pr => { :sum => 5, :name => "PR" }, :direct => { :sum => 5, :name => "Direct Sales" }, :partners => { :sum => 5, :name => "Partnerships and Business Development" }, :referral => { :sum => 5, :name => "Referral Marketing" }, :email => { :sum => 5, :name => "Email Marketing" } }
 	final_score_hash = adjust_for_all_answers(answers, final_score_hash)
 	return final_score_hash
 end
@@ -22,189 +22,189 @@ end
 
 def adjust_for_businesses(businesses, hash)
 	if businesses == "true"
-		hash[:facebook] += 5
-		hash[:twitter] += 3
-		hash[:display] += 2
-		hash[:search] += 8
-		hash[:retargeting] += 5
-		hash[:app] += 0
-		hash[:local] += 0
-		hash[:seo] += 5
-		hash[:content] += 8
-		hash[:social] += 3
-		hash[:pr] += 2
-		hash[:direct] += 15
-		hash[:partners] += 10
-		hash[:referral] += 0
-		hash[:email] += 10
+		hash[:facebook][:sum] += 5
+		hash[:twitter][:sum] += 3
+		hash[:display][:sum] += 2
+		hash[:search][:sum] += 8
+		hash[:retargeting][:sum] += 5
+		hash[:app][:sum] += 0
+		hash[:local][:sum] += 0
+		hash[:seo][:sum] += 5
+		hash[:content][:sum] += 8
+		hash[:social][:sum] += 3
+		hash[:pr][:sum] += 2
+		hash[:direct][:sum] += 15
+		hash[:partners][:sum] += 10
+		hash[:referral][:sum] += 0
+		hash[:email][:sum] += 10
 	end
 	return hash
 end
 
 def adjust_for_consumers(consumers, hash)
 	if consumers == "true"
-		hash[:facebook] += 7
-		hash[:twitter] += 3
-		hash[:display] += 2
-		hash[:search] += 8
-		hash[:retargeting] += 5
-		hash[:app] += 0
-		hash[:local] += 0
-		hash[:seo] += 8
-		hash[:content] += 8
-		hash[:social] += 8
-		hash[:pr] += 5
-		hash[:direct] += 0
-		hash[:partners] += 5
-		hash[:referral] += 5
-		hash[:email] += 8
+		hash[:facebook][:sum] += 7
+		hash[:twitter][:sum] += 3
+		hash[:display][:sum] += 2
+		hash[:search][:sum] += 8
+		hash[:retargeting][:sum] += 5
+		hash[:app][:sum] += 0
+		hash[:local][:sum] += 0
+		hash[:seo][:sum] += 8
+		hash[:content][:sum] += 8
+		hash[:social][:sum] += 8
+		hash[:pr][:sum] += 5
+		hash[:direct][:sum] += 0
+		hash[:partners][:sum] += 5
+		hash[:referral][:sum] += 5
+		hash[:email][:sum] += 8
 	end
 	return hash
 end
 
 def adjust_for_branding(branding, hash)
 	if branding == "true"
-		hash[:facebook] += 0
-		hash[:twitter] += 0
-		hash[:display] += 5
-		hash[:search] += 0
-		hash[:retargeting] += 0
-		hash[:app] += 0
-		hash[:local] += 0
-		hash[:seo] += 0
-		hash[:content] += 5
-		hash[:social] += 0
-		hash[:pr] += 5
-		hash[:direct] += 0
-		hash[:partners] += 0
-		hash[:referral] += 0
-		hash[:email] += 0
+		hash[:facebook][:sum] += 0
+		hash[:twitter][:sum] += 0
+		hash[:display][:sum] += 5
+		hash[:search][:sum] += 0
+		hash[:retargeting][:sum] += 0
+		hash[:app][:sum] += 0
+		hash[:local][:sum] += 0
+		hash[:seo][:sum] += 0
+		hash[:content][:sum] += 5
+		hash[:social][:sum] += 0
+		hash[:pr][:sum] += 5
+		hash[:direct][:sum] += 0
+		hash[:partners][:sum] += 0
+		hash[:referral][:sum] += 0
+		hash[:email][:sum] += 0
 	end
 	return hash
 end
 
 def adjust_for_local(local, hash)
 	if local == "true"
-		hash[:facebook] += 0
-		hash[:twitter] += 0
-		hash[:display] += 0
-		hash[:search] += 0
-		hash[:retargeting] += 0
-		hash[:app] += 0
-		hash[:local] += 25
-		hash[:seo] += 0
-		hash[:content] += 0
-		hash[:social] += 0
-		hash[:pr] += 0
-		hash[:direct] += 0
-		hash[:partners] += 0
-		hash[:referral] += 0
-		hash[:email] += 0
+		hash[:facebook][:sum] += 0
+		hash[:twitter][:sum] += 0
+		hash[:display][:sum] += 0
+		hash[:search][:sum] += 0
+		hash[:retargeting][:sum] += 0
+		hash[:app][:sum] += 0
+		hash[:local][:sum] += 25
+		hash[:seo][:sum] += 0
+		hash[:content][:sum] += 0
+		hash[:social][:sum] += 0
+		hash[:pr][:sum] += 0
+		hash[:direct][:sum] += 0
+		hash[:partners][:sum] += 0
+		hash[:referral][:sum] += 0
+		hash[:email][:sum] += 0
 	end
 	return hash
 end
 
 def adjust_for_site(site, hash)
 	if site == "true"
-		hash[:facebook] += 0
-		hash[:twitter] += 0
-		hash[:display] += 0
-		hash[:search] += 0
-		hash[:retargeting] += 0
-		hash[:app] += 0
-		hash[:local] += 0
-		hash[:seo] += 15
-		hash[:content] += 0
-		hash[:social] += 0
-		hash[:pr] += 0
-		hash[:direct] += 0
-		hash[:partners] += 0
-		hash[:referral] += 0
-		hash[:email] += 0
+		hash[:facebook][:sum] += 0
+		hash[:twitter][:sum] += 0
+		hash[:display][:sum] += 0
+		hash[:search][:sum] += 0
+		hash[:retargeting][:sum] += 0
+		hash[:app][:sum] += 0
+		hash[:local][:sum] += 0
+		hash[:seo][:sum] += 15
+		hash[:content][:sum] += 0
+		hash[:social][:sum] += 0
+		hash[:pr][:sum] += 0
+		hash[:direct][:sum] += 0
+		hash[:partners][:sum] += 0
+		hash[:referral][:sum] += 0
+		hash[:email][:sum] += 0
 	end
 	return hash
 end
 
 def adjust_for_ecommerce(ecommerce, hash)
 	if ecommerce == "true"
-		hash[:facebook] += 5
-		hash[:twitter] += 0
-		hash[:display] += 0
-		hash[:search] += 5
-		hash[:retargeting] += 5
-		hash[:app] += 0
-		hash[:local] += 0
-		hash[:seo] += 5
-		hash[:content] += 5
-		hash[:social] += 5
-		hash[:pr] += 0
-		hash[:direct] += 0
-		hash[:partners] += 0
-		hash[:referral] += 5
-		hash[:email] += 5
+		hash[:facebook][:sum] += 5
+		hash[:twitter][:sum] += 0
+		hash[:display][:sum] += 0
+		hash[:search][:sum] += 5
+		hash[:retargeting][:sum] += 5
+		hash[:app][:sum] += 0
+		hash[:local][:sum] += 0
+		hash[:seo][:sum] += 5
+		hash[:content][:sum] += 5
+		hash[:social][:sum] += 5
+		hash[:pr][:sum] += 0
+		hash[:direct][:sum] += 0
+		hash[:partners][:sum] += 0
+		hash[:referral][:sum] += 5
+		hash[:email][:sum] += 5
 	end
 	return hash
 end
 
 def adjust_for_mobile(mobile, hash)
 	if mobile == "true"
-		hash[:facebook] += 0
-		hash[:twitter] += 0
-		hash[:display] += 0
-		hash[:search] += 0
-		hash[:retargeting] += 0
-		hash[:app] += 50
-		hash[:local] += 0
-		hash[:seo] += 0
-		hash[:content] += 0
-		hash[:social] += 0
-		hash[:pr] += 0
-		hash[:direct] += 0
-		hash[:partners] += 0
-		hash[:referral] += 0
-		hash[:email] += 0
+		hash[:facebook][:sum] += 0
+		hash[:twitter][:sum] += 0
+		hash[:display][:sum] += 0
+		hash[:search][:sum] += 0
+		hash[:retargeting][:sum] += 0
+		hash[:app][:sum] += 50
+		hash[:local][:sum] += 0
+		hash[:seo][:sum] += 0
+		hash[:content][:sum] += 0
+		hash[:social][:sum] += 0
+		hash[:pr][:sum] += 0
+		hash[:direct][:sum] += 0
+		hash[:partners][:sum] += 0
+		hash[:referral][:sum] += 0
+		hash[:email][:sum] += 0
 	end
 	return hash
 end
 
 def adjust_for_saas(saas, hash)
 	if saas == "true"
-		hash[:facebook] += 5
-		hash[:twitter] += 5
-		hash[:display] += 0
-		hash[:search] += 5
-		hash[:retargeting] += 5
-		hash[:app] += 0
-		hash[:local] += 0
-		hash[:seo] += 5
-		hash[:content] += 5
-		hash[:social] += 5
-		hash[:pr] += 0
-		hash[:direct] += 0
-		hash[:partners] += 10
-		hash[:referral] += 10
-		hash[:email] += 10
+		hash[:facebook][:sum] += 5
+		hash[:twitter][:sum] += 5
+		hash[:display][:sum] += 0
+		hash[:search][:sum] += 5
+		hash[:retargeting][:sum] += 5
+		hash[:app][:sum] += 0
+		hash[:local][:sum] += 0
+		hash[:seo][:sum] += 5
+		hash[:content][:sum] += 5
+		hash[:social][:sum] += 5
+		hash[:pr][:sum] += 0
+		hash[:direct][:sum] += 0
+		hash[:partners][:sum] += 10
+		hash[:referral][:sum] += 10
+		hash[:email][:sum] += 10
 	end
 	return hash
 end
 
 def adjust_for_contentCreation(contentCreation, hash)
 	if contentCreation == "true"
-		hash[:facebook] += 0
-		hash[:twitter] += 0
-		hash[:display] += 0
-		hash[:search] += 0
-		hash[:retargeting] += 0
-		hash[:app] += 0
-		hash[:local] += 0
-		hash[:seo] += 10
-		hash[:content] += 0
-		hash[:social] += 10
-		hash[:pr] += 0
-		hash[:direct] += 0
-		hash[:partners] += 0
-		hash[:referral] += 0
-		hash[:email] += 10
+		hash[:facebook][:sum] += 0
+		hash[:twitter][:sum] += 0
+		hash[:display][:sum] += 0
+		hash[:search][:sum] += 0
+		hash[:retargeting][:sum] += 0
+		hash[:app][:sum] += 0
+		hash[:local][:sum] += 0
+		hash[:seo][:sum] += 10
+		hash[:content][:sum] += 0
+		hash[:social][:sum] += 10
+		hash[:pr][:sum] += 0
+		hash[:direct][:sum] += 0
+		hash[:partners][:sum] += 0
+		hash[:referral][:sum] += 0
+		hash[:email][:sum] += 10
 	end
 	return hash
 end
@@ -219,39 +219,33 @@ def adjust_for_ltv(ltv, hash)
 	else
 		ltvMultiplier = 0.5
 	end
-	hash[:facebook] *= 1 + ltvMultiplier
-	hash[:twitter] *= 1 + ltvMultiplier
-	hash[:display] *= 1 + ltvMultiplier
-	hash[:search] *= 1 + ltvMultiplier
-	hash[:retargeting] *= 1 + ltvMultiplier
-	hash[:app] *= 1 + ltvMultiplier
-	hash[:local] *= 1 + ltvMultiplier
+	hash[:facebook][:sum] *= 1 + ltvMultiplier
+	hash[:twitter][:sum] *= 1 + ltvMultiplier
+	hash[:display][:sum] *= 1 + ltvMultiplier
+	hash[:search][:sum] *= 1 + ltvMultiplier
+	hash[:retargeting][:sum] *= 1 + ltvMultiplier
+	hash[:app][:sum] *= 1 + ltvMultiplier
+	hash[:local][:sum] *= 1 + ltvMultiplier
 	if ltv <= 100
-		hash[:direct] = 0
+		hash[:direct][:sum] = 0
 	end
 	return hash
 end
 
 def check_if_mobile(mobile, seo)
 	if mobile == "true"
-		seo = 0
+		seo[:sum] = 0
 	end
 	return seo
 end
 
 def calculate_percentages(hash)
-	total_score = hash.values.inject { |a,b| a + b }
-	hash.each do | channel, score |
-		hash[channel] = score / total_score
+	total_score = 0
+	hash.each do | k, v |
+		total_score += v[:sum]
+	end
+	hash.each do | k, v |
+		v[:sum] = v[:sum] / total_score
 	end
 	return hash
 end
-
-# def calculate_budget(hash, budget)
-# 	[:seo, :content, :social, :pr, :direct, :partners, :referral, :email].each { |non_ad_channel| hash.delete(non_ad_channel) }
-# 	total_budget = hash.values.inject { |a,b| a + b }
-# 	hash.each do | channel, score |
-# 		hash[channel] = (score / total_budget * budget).round
-# 	end
-# 	return hash
-# end

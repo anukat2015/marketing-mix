@@ -62,21 +62,11 @@
 				bindto: "#score_chart",
 			    data: {
 			        columns: [
-			            ["Facebook Advertising", <%= results[:facebook] %>],
-			            ["Twitter Advertising", <%= results[:twitter] %>],
-			            ["Display/Banner Advertising", <%= results[:display] %>],
-			            ["Search Advertising", <%= results[:search] %>],
-			            ["Retargeting", <%= results[:retargeting] %>],
-			            ["Mobile App Install Advertising", <%= results[:app] %>],
-			            ["Local Advertising", <%= results[:local] %>],
-			            ["SEO", <%= results[:seo] %>],
-			            ["Content Marketing", <%= results[:content] %>],
-			            ["Social Media and Community", <%= results[:social] %>],
-			            ["PR", <%= results[:pr] %>],
-			            ["Direct Sales", <%= results[:direct] %>],
-			            ["Partnerships and Business Development", <%= results[:partners] %>],
-			            ["Referral Marketing", <%= results[:referral] %>],
-			            ["Email Marketing", <%= results[:email] %>],
+			        	<% results.each do | k, v | %>
+			        		<% if v[:sum] != 0 %>
+			        			[ "<%= v[:name] %>", <%= v[:sum] %> ],
+			        		<% end %>
+			        	<% end %>
 			        ],
 			        type : 'pie',
 			        onclick: function (d, i) { console.log("onclick", d, i); },
