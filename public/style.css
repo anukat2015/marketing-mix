@@ -1,5 +1,24 @@
+@font-face {
+	font-family: 'Proxima Nova';
+	font-style: normal;
+	src: url(./fonts/Proxima.otf);
+}
+
+@font-face {
+	font-family: 'Proxima Nova';
+	font-style: normal;
+	font-weight: 300;
+	src: url(./fonts/Proxima-Light.otf);
+}
+
+@font-face {
+	font-family: 'Proxima Nova';
+	font-style: normal;
+	font-weight: bold;
+	src: url(./fonts/Proxima-Bold.otf);
+}
+
 #dummybodyid {
-	font-family: 'Montserrat', sans-serif;
 	padding: 0;
 	margin: 0;
 }
@@ -64,6 +83,8 @@ progress::-moz-progress-bar {
 	text-align: center;
 	position: relative;
 	font-size: 2.5em;
+	font-family: 'Proxima Nova', sans-serif;
+	font-weight: bold;
 }
 
 .container.title {
@@ -81,7 +102,14 @@ progress::-moz-progress-bar {
 }
 
 .header {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Proxima Nova', sans-serif;
+	font-weight: bold;
+}
+
+.explanation {
+	font-family: 'Proxima Nova', sans-serif;
+	font-weight: 300;
+	font-size: 1rem;
 }
 
 #down img {
@@ -167,7 +195,8 @@ button[type=submit] {
 }
 
 .results-header {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Proxima Nova', sans-serif;
+	font-weight: bold;
 	font-size: 2rem;
 }
 
