@@ -23,9 +23,15 @@
 	margin: 0;
 }
 
+.top-bar .title-area .name h1 {
+	color: #fff;
+	font-family: 'Proxima Nova';
+	font-weight: bold;
+}
+
 .top-bar img {
 	height: 80%;
-	margin-left: 20px;
+	margin-right: 20px;
 	margin-top: 5px;
 	margin-bottom: 0px;
 }
@@ -85,6 +91,7 @@ progress::-moz-progress-bar {
 	font-size: 2.5em;
 	font-family: 'Proxima Nova', sans-serif;
 	font-weight: bold;
+	overflow-y: scroll;
 }
 
 .container.title {
@@ -194,15 +201,24 @@ button[type=submit] {
 	margin-top: 5em;
 }
 
-.results-header {
-	font-family: 'Proxima Nova', sans-serif;
-	font-weight: bold;
-	font-size: 2rem;
-}
-
 #score_chart {
 	margin-top: 3rem;
 	margin-bottom: 3rem;
+}
+
+.results .explanation {
+	font-size: 1rem;
+	font-family: 'Proxima Nova';
+	font-style: normal;
+	font-weight: 500;
+}
+
+.results .button {
+	width: 180px;
+	font-size: 1rem;
+	font-family: 'Proxima Nova';
+	font-style: normal;
+	font-weight: 500;
 }
 
 @media only screen and (max-width: 40em) {

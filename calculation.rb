@@ -247,5 +247,6 @@ def calculate_percentages(hash)
 	hash.each do | k, v |
 		v[:sum] = v[:sum] / total_score
 	end
+	hash = hash.sort_by{ | k, v | v[:sum] }.reverse
 	return hash
 end
