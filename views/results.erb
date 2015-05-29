@@ -40,7 +40,7 @@
 			<div class="row text-center">
 				<div class="large-12 columns">
 					<div id="score_chart"></div>
-					<div class="panel explanation">Based on what we know about your business, here's how we think you should split your resources across the various digital marketing channels. To learn more about each channel and how it relates to your business, hover over it in the pie chart.</div>
+					<div class="panel" id="results-explanation">Based on what we know about your business, here's how we think you should split your resources across the various digital marketing channels. To learn more about each channel and how it relates to your business, hover over its slice in the pie chart.</div>
 				</div>
 			</div>
 			<div class="row text-center">
@@ -66,11 +66,54 @@
 		<!-- Load c3.js -->
 		<script src="c3/c3.min.js"></script>
 
-		<!-- Explanations to display below chart -->
-		<script src="js/chart.js"></script>
-
 		<!-- Generate pie chart -->
 		<script type="text/javascript">
+
+			function channelExplanation(channel) {
+				switch (channel) {
+					case "Mobile App Install Advertising":
+						return "Mobile App Install Marketing is";
+					case "Email Marketing":
+						return "Email Marketing is";
+					case "Search Advertising":
+						return "Search Advertising is";
+					case "Facebook Advertising":
+						return "Facebook Advertising is";
+					case "Local Advertising":
+						return "Local Advertising";
+					case "Retargeting":
+						return "Retargeting is";
+					case "Content Marketing":
+						return "Content Marketing";
+					case "Social Media and Community":
+						return "Social Media and Community";
+					case "Partnerships and Business Development":
+						return "Partnerships and Business Development";
+					case "Referral Marketing":
+						return "Referral Marketing";
+					case "Twitter Advertising":
+						return "Twitter Advertising";
+					case "Display/Banner Advertising":
+						return "Display/Banner Advertising";
+					case "Direct Sales":
+						return "Direct Sales";
+					case "PR":
+						return "PR";
+					default:
+						return "Based on what we know about your business, here's how we think you should split your resources across the various digital marketing channels. To learn more about each channel and how it relates to your business, hover over its slice in the pie chart.";
+				}
+			}
+
+			function replaceText(d) {
+				$("div#results-explanation").text(
+					channelExplanation(d.id)
+				);
+			}
+
+			function defaultText() {
+				$("div#results-explanation").text("Based on what we know about your business, here's how we think you should split your resources across the various digital marketing channels. To learn more about each channel and how it relates to your business, hover over its slice in the pie chart.");
+			}
+
 			var chart = c3.generate({
 				bindto: "#score_chart",
 			    data: {
@@ -85,8 +128,12 @@
 			        onclick: function (d, i) { console.log("onclick", d, i); },
 			        onmouseover: function (d, i) {
 			        	console.log("onmouseover", d, i);
+			        	replaceText(d);
 			        },
-			        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+			        onmouseout: function (d, i) {
+			        	console.log("onmouseout", d, i);
+			        	defaultText();
+			        }
 			    },
 			    transition: {
 		        	duration: 0

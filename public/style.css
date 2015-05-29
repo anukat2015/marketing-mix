@@ -113,7 +113,7 @@ progress::-moz-progress-bar {
 	font-weight: bold;
 }
 
-.explanation {
+.quiz-explanation {
 	font-family: 'Proxima Nova', sans-serif;
 	font-weight: 300;
 	font-size: 1rem;
@@ -206,15 +206,15 @@ button[type=submit] {
 	margin-bottom: 3rem;
 }
 
-.results .explanation {
+.results .button {
+	width: 180px;
 	font-size: 1rem;
 	font-family: 'Proxima Nova';
 	font-style: normal;
 	font-weight: 500;
 }
 
-.results .button {
-	width: 180px;
+#results-explanation {
 	font-size: 1rem;
 	font-family: 'Proxima Nova';
 	font-style: normal;
