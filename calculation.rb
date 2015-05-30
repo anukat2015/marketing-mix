@@ -1,6 +1,7 @@
 def calculate_final_score(answers)
 	final_score_hash = { :facebook => { :sum => 5, :name => "Facebook Advertising" }, :twitter => { :sum => 5, :name => "Twitter Advertising" }, :display => { :sum => 5, :name => "Display/Banner Advertising" }, :search => { :sum => 5, :name => "Search Advertising" }, :retargeting => { :sum => 5, :name => "Retargeting" }, :app => { :sum => 0, :name => "Mobile App Install Advertising" }, :local => { :sum => 0, :name => "Local Advertising" }, :seo => { :sum => 5, :name => "SEO" }, :content => { :sum => 5, :name => "Content Marketing" }, :social => { :sum => 5, :name => "Social Media and Community" }, :pr => { :sum => 5, :name => "PR" }, :direct => { :sum => 5, :name => "Direct Sales" }, :partners => { :sum => 5, :name => "Partnerships and Business Development" }, :referral => { :sum => 5, :name => "Referral Marketing" }, :email => { :sum => 5, :name => "Email Marketing" } }
 	final_score_hash = adjust_for_all_answers(answers, final_score_hash)
+	final_score_hash = add_explanations(final_score_hash)
 	return final_score_hash
 end
 
@@ -248,5 +249,12 @@ def calculate_percentages(hash)
 		v[:sum] = v[:sum] / total_score
 	end
 	hash = hash.sort_by{ | k, v | v[:sum] }.reverse
+	return hash
+end
+
+def add_explanations(hash)
+	hash.each do | k, v |
+		v[:explanation] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+	end
 	return hash
 end
