@@ -228,6 +228,11 @@ button[type=submit] {
    }
 
    .header {
-   	font-size: 2em;
+   	font-size: 1.5em;
    }
+
+   .wrapper {
+	position: relative;
+	top: 30%;
+	}
 }
