@@ -221,6 +221,10 @@ button[type=submit] {
 	font-weight: 500;
 }
 
+#results-explanation-mobile-only {
+	display: none;
+}
+
 @media only screen and (max-device-width: 480px) {
 
    .container {
@@ -234,5 +238,13 @@ button[type=submit] {
    .wrapper {
 	position: relative;
 	top: 30%;
+	}
+
+	#results-explanation {
+		display: none;
+	}
+
+	#results-explanation-mobile-only {
+		display: block;
 	}
 }
