@@ -74,7 +74,7 @@ def adjust_for_branding(branding, hash)
 		hash[:local][:sum] += 0
 		hash[:seo][:sum] += 0
 		hash[:content][:sum] += 5
-		hash[:social][:sum] += 0
+		hash[:social][:sum] += 5
 		hash[:pr][:sum] += 5
 		hash[:direct][:sum] += 0
 		hash[:partners][:sum] += 0

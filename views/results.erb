@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" lang="en" >
 	<head>
@@ -41,7 +41,10 @@
 				<div class="large-12 columns">
 					<div id="score_chart"></div>
 					<div class="panel" id="results-explanation">Based on what we know about your business, here's how we think you should split your resources across the various digital marketing channels. To learn more about each channel and how it relates to your business, hover over its slice in the pie chart.</div>
-					<div class="panel" id="results-explanation-mobile-only">Mobile explanation here</div>
+					<div class="panel" id="results-explanation-mobile-only">
+						Based on what we know about your business, here's how we think you should split your resources across the various digital marketing channels.
+						<p></p>
+					</div>
 				</div>
 			</div>
 			<div class="row text-center">
@@ -75,21 +78,21 @@
 			function channelExplanation(channel) {
 				switch (channel) {
 					case "Mobile App Install Advertising":
-						return "Mobile App Install Marketing is";
+						return "Mobile app install ads direct users to download a mobile app, and can be set up on a variety of networks such as Facebook, Twitter, AdWords, YouTube and Tumblr. These ads are quickly becoming an essential tool for marketers who want to expose a wide audience to their apps. They can result in significant downloads if shown to relevant audiences and complemented by App Store Optimization (ASO). One benefit of using these ads is that they offer an easier-to-measure ROI in contrast to other marketing channels, since mobile app downloads typically require fewer touchpoints than purchases in any other type of market.";
 					case "Email Marketing":
-						return "Email Marketing is";
+						return "Email marketing continues to be one of the most effective tools in a marketer's toolbox, and there are few companies that would not stand to benefit from it. Building an email list should be a high priority for a company from the very beginning of their marketing process. For e-commerce businesses in particular, emailing coupons and other promotional material can go a long way in driving online sales. Companies selling SaaS products also stand to benefit from this channel, as email is an ideal avenue for conveying more in-depth information about the product, and can be effectively integrated into a longer sales process.";
 					case "Search Advertising":
-						return "Search Advertising is";
+						return "Paid search refers to advertisements placed within the sponsored listings of a search engine. Advertisers are typically charged on a pay-per-click basis. Paid search is suitable for many different businesses, particularly direct-response marketers and online retailers. PPC advertisements also provide a testing environment for value proposition messaging, since click-through-rates serve as a reliable proxy for viewer engagement.";
 					case "Facebook Advertising":
-						return "Facebook Advertising is";
+						return "Facebook is a valuable advertising tool primarily due to its advanced audience targeting features. Some of the data you can leverage include location, age, gender, interests, life events, purchase behavior, and more. Any company that has a firm sense of the audience they are trying to reach should explore this option. For small businesses with a limited marketing budget, Facebook advertising is a particularly viable choice as the minimum daily budget for any ad set is just $1.00 USD and there is a variety of bid types available (CPC, CPM, CPA, etc).";
 					case "Local Advertising":
-						return "Local Advertising";
+						return "In local advertising, promotional messages are directed to the local population rather than the mass market. It is used primarily by small businesses such as stores and restaurants, but can also be used by larger businesses with a strong local presence. Local advertising comprises a number of different efforts, such as local sponsorships, community involvement and industry events.";
 					case "Retargeting":
-						return "Retargeting is";
+						return "Retargeting helps to keep your brand in front of customers who have not converted, which is crucial given that the vast majority of web traffic will not convert on the first visit. Particularly for larger purchases where the consumer's decision-making process is likely to be long and complex (e.g. buying an expensive SaaS product or a luxury item), retargeting is important to recapture their interest at a later stage. It tends to have a higher ROI that other digital channels as it focuses advertising spend on people who have already demonstrated interest in the brand. While it is a powerful conversion optimization tool, it is only truly effective if it is part of a broader digital strategy.";
 					case "Content Marketing":
-						return "Content Marketing";
+						return "Content marketing refers to a company's efforts to engage with customers and to provide them with valuable expertise to assist them during their purchasing process of any product or service. Both B2B and B2C companies across a variety of industries stand to benefit from this marketing asset, as it allows them not only to connect with new leads and build brand authority, but also to create SEO benefits. In implementing content marketing, it is important to develop a detailed content strategy and put together a budget that accounts for both content creation and distribution.";
 					case "Social Media and Community":
-						return "Social Media and Community";
+						return "Social media serves a number of different roles, from increasing brand awareness to distributing relevant marketing content and providing customer support. It is marked by consumers' ability to create their own content and interact directly with the brand, which helps to increase their sense of involvement in the company. Companies that are looking to increase customer retention would especially benefit from utilizing this channel.";
 					case "Partnerships and Business Development":
 						return "Partnerships and Business Development";
 					case "Referral Marketing":
@@ -102,6 +105,8 @@
 						return "Direct Sales";
 					case "PR":
 						return "PR";
+					case "SEO":
+						return "SEO";
 					default:
 						return "Based on what we know about your business, here's how we think you should split your resources across the various digital marketing channels. To learn more about each channel and how it relates to your business, hover over its slice in the pie chart.";
 				}

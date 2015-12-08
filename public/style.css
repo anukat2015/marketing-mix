@@ -214,7 +214,7 @@ button[type=submit] {
 	font-weight: 500;
 }
 
-#results-explanation {
+#results-explanation, #results-explanation-mobile-only {
 	font-size: 1rem;
 	font-family: 'Proxima Nova';
 	font-style: normal;
@@ -246,5 +246,6 @@ button[type=submit] {
 
 	#results-explanation-mobile-only {
 		display: block;
+
 	}
 }
