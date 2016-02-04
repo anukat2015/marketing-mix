@@ -4,17 +4,17 @@ $(document).ready(function (){
                 scrollTop: $("#q1").offset().top
             }, 800);
     });
-    $("#yes1, #no1").click(function (){
+    $("label.q1").click(function (){
             $('html, body').animate({
                 scrollTop: $("#q2").offset().top
             }, 800);
     });
-    $("#yes2, #no2").click(function (){
+    $("#businesses2, #consumers2").click(function (){
             $('html, body').animate({
                 scrollTop: $("#q3").offset().top
             }, 800);
     });
-    $("#yes3, #no3").click(function (){
+    $("#lessthan5, #5to100, #morethan100, #100to1000, #morethan1000").click(function (){
             $('html, body').animate({
                 scrollTop: $("#q4").offset().top
             }, 800);
