@@ -19,7 +19,7 @@ $(document).ready(function (){
                 scrollTop: $("#q4").offset().top
             }, 800);
     });
-    $("#yes4, #no4").click(function (){
+    $("#low4, #medium4, #high4").click(function (){
             $('html, body').animate({
                 scrollTop: $("#q5").offset().top
             }, 800);
@@ -27,31 +27,6 @@ $(document).ready(function (){
     $("#yes5, #no5").click(function (){
             $('html, body').animate({
                 scrollTop: $("#q6").offset().top
-            }, 800);
-    });
-    $("#yes6, #no6").click(function (){
-            $('html, body').animate({
-                scrollTop: $("#q7").offset().top
-            }, 800);
-    });
-    $("#yes7, #no7").click(function (){
-            $('html, body').animate({
-                scrollTop: $("#q8").offset().top
-            }, 800);
-    });
-    $("#yes8, #no8").click(function (){
-            $('html, body').animate({
-                scrollTop: $("#q9").offset().top
-            }, 800);
-    });
-    $("#yes9, #no9").click(function (){
-            $('html, body').animate({
-                scrollTop: $("#q10").offset().top
-            }, 800);
-    });
-    $("#next").click(function (){
-            $('html, body').animate({
-                scrollTop: $("#q11").offset().top
             }, 800);
     });
     var winHeight = $(window).height(), 

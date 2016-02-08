@@ -94,15 +94,15 @@
 					<div class="large-12 columns content">
 						<span class="question">What is your estimated customer lifetime value?</span>
 						<div>
-							<input type="radio" name="branding" value="lessthan5" id="lessthan5">
+							<input type="radio" name="ltv" value="lessthan5" id="lessthan5">
 							<label for="lessthan5"><$5</label>
-							<input type="radio" name="branding" value="5to100" id="5to100">
+							<input type="radio" name="ltv" value="5to100" id="5to100">
 							<label for="5to100">Between $5 and $100</label>
-							<input type="radio" name="branding" value="morethan100" id="morethan100">
+							<input type="radio" name="ltv" value="morethan100" id="morethan100">
 							<label for="morethan100">$100</label>
-							<input type="radio" name="branding" value="100to1000" id="100to1000">
+							<input type="radio" name="ltv" value="100to1000" id="100to1000">
 							<label for="100to1000">Between $100 and $1000</label>
-							<input type="radio" name="branding" value="morethan1000" id="morethan1000">
+							<input type="radio" name="ltv" value="morethan1000" id="morethan1000">
 							<label for="morethan1000">>$1000</label>
 						</div>
 					</div>
@@ -111,12 +111,14 @@
 			<div class="container" id="q4">
 				<div class="row wrapper">
 					<div class="large-12 columns content">
-						<span class="question">Is there a strong local component to your business?</span>
+						<span class="question">How competitive is your industry?</span>
 						<div>
-							<input type="radio" name="local" value="true" id="yes4">
-							<label for="yes4">Yes</label>
-							<input type="radio" name="local" value="false" id="no4">
-							<label for="no4">No</label>
+							<input type="radio" name="competitiveness" value="low" id="low4">
+							<label for="low4">Low</label>
+							<input type="radio" name="competitiveness" value="false" id="medium4">
+							<label for="medium4">Medium</label>
+							<input type="radio" name="competitiveness" value="false" id="high4">
+							<label for="high4">High</label>
 						</div>
 					</div>
 				</div>
@@ -124,11 +126,11 @@
 			<div class="container" id="q5">
 				<div class="row wrapper">
 					<div class="large-12 columns content">
-						<span class="question">Does your site have more than 10 pages?</span>
+						<span class="question">Has your company raised venture capital?</span>
 						<div>
-							<input type="radio" name="site" value="true" id="yes5">
+							<input type="radio" name="vc" value="true" id="yes5">
 							<label for="yes5">Yes</label>
-							<input type="radio" name="site" value="false" id="no5">
+							<input type="radio" name="vc" value="false" id="no5">
 							<label for="no5">No</label>
 						</div>
 					</div>
@@ -137,75 +139,12 @@
 			<div class="container" id="q6">
 				<div class="row wrapper">
 					<div class="large-12 columns content">
-						<span class="question">Are you running an e-commerce website?</span>
+						<span class="question">Is your company currently profitable?</span>
 						<div>
-							<input type="radio" name="ecommerce" value="true" id="yes6">
+							<input type="radio" name="profitable" value="true" id="yes6">
 							<label for="yes6">Yes</label>
-							<input type="radio" name="ecommerce" value="false" id="no6">
+							<input type="radio" name="profitable" value="false" id="no6">
 							<label for="no6">No</label>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="container" id="q7">
-				<div class="row wrapper">
-					<div class="large-12 columns content">
-						<span class="question">Is your product a mobile app?</span>
-						<div>
-							<input type="radio" name="mobile" value="true" id="yes7">
-							<label for="yes7">Yes</label>
-							<input type="radio" name="mobile" value="false" id="no7">
-							<label for="no7">No</label>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="container" id="q8">
-				<div class="row wrapper">
-					<div class="large-12 columns content">
-						<span class="question">Is your product a SaaS product?</span>
-						<div>
-							<input type="radio" name="saas" value="true" id="yes8">
-							<label for="yes8">Yes</label>
-							<input type="radio" name="saas" value="false" id="no8">
-							<label for="no8">No</label>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="container" id="q9">
-				<div class="row wrapper">
-					<div class="large-12 columns content">
-						<span class="question">Does your product or service rely heavily on content creation?</span>
-						<div>
-							<input type="radio" name="contentCreation" value="true" id="yes9">
-							<label for="yes9">Yes</label>
-							<input type="radio" name="contentCreation" value="false" id="no9">
-							<label for="no9">No</label>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="container" id="q10">
-				<div class="row wrapper">
-					<div class="large-12 columns content">
-						<span class="question">What is the estimated lifetime value of your customers?</span>
-						<div class="row">
-							<div class="large-5 medium-5 small-3 columns">&nbsp;</div>
-							<div class="large-2 medium-2 small-6 columns">
-								<div class="row collapse">
-									<div class="small-3 large-2 columns">
-										<span class="prefix">$</span>
-									</div>
-									<div class="small-9 large-10 columns">
-										<input type="number" name="ltv" min="0">
-									</div>
-								</div>
-							</div>
-							<div class="large-5 medium-5 small-3 columns">&nbsp;</div>
-						</div>
-						<div class="row text-center">
-							<button type="submit">Give Me My Results!</button>
 						</div>
 					</div>
 				</div>
