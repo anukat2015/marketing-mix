@@ -4,7 +4,7 @@ $(document).ready(function (){
                 scrollTop: $("#q1").offset().top
             }, 800);
     });
-    var qns = [1,2,3,4,5,6]
+    var qns = [1,2,3,4,5,6,7]
     $.each(qns, function (index, value) {
       $("input[name='q" + index + "']").click(function (){
             $('html, body').animate({
