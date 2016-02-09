@@ -4,14 +4,14 @@ $(document).ready(function (){
                 scrollTop: $("#q1").offset().top
             }, 800);
     });
-    var i;
-    for (i = 1; i < 6; i++) {
-        $("input[name='q" + i + "']").click(function (){
+    var qns = [1,2,3,4,5,6]
+    $.each(qns, function (index, value) {
+      $("input[name='q" + index + "']").click(function (){
             $('html, body').animate({
-                scrollTop: $("#q2").offset().top
+                scrollTop: $("#q" + value).offset().top
             }, 800);
         });
-    }
+    });
     var winHeight = $(window).height(), 
       docHeight = $(document).height(),
       progressBar = $('progress'),
