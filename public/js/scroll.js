@@ -1,5 +1,5 @@
 $(document).ready(function (){
-	$("#arrow").click(function (){
+	$("#start-button").click(function (){
             $('html, body').animate({
                 scrollTop: $("#q1").offset().top
             }, 800);

@@ -63,7 +63,7 @@
 	font-weight: 300;
 	font-size: 1rem;
 }
-
+/*
 #down img {
 	-webkit-transition: all 200ms ease-in-out;
 	-moz-transition: all 200ms ease-in-out;
@@ -78,7 +78,7 @@
 	-webkit-transform: translate3d(0, 5px, 0);
 	-moz-transform: translate3d(0, 5px, 0);
 	-ms-transform: translate3d(0, 5px, 0);
-}
+}*/
 
 #quiz {
 	position: relative;

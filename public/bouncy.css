@@ -14,14 +14,15 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Proxima Nova", sans-serif;
-  color: #040404;
+  color: #ffffff;
   background-color: #ffffff;
 }
 
 a {
-  color: #2e416a;
+  color: #ffffff;
   text-decoration: none;
 }
+
 
 /* -------------------------------- 
 
@@ -34,7 +35,7 @@ General Style
   width: 100%;
   /* vertically align its content */
   display: table;
-  background: #2e416a;
+  background: #fffcf5;
   overflow: hidden;
 }
 
@@ -44,20 +45,20 @@ General Style
   vertical-align: middle;
   text-align: center;
   padding: 0 5%;
-  background: #2e416a;
+  background: #fffcf5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 .cd-intro-content h1 {
   font-size: 1.4rem;
-  color: #ffffff;
+  color: #333333;
 }
 .cd-intro-content p {
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.4;
   margin: 1em 0;
-  color: #6d7a97;
+  color: #B6AC95;
 }
 .cd-intro-content .action-wrapper {
   display: inline-block;
@@ -70,9 +71,14 @@ General Style
 .cd-intro-content .action-wrapper > * {
   float: left;
 }
+
+.cd-intro-content .action-wrapper a:hover, .cd-intro-content .action-wrapper a:visited, .cd-intro-content .action-wrapper a:active {
+  color: #ffffff;
+}
+
 @media only screen and (min-width: 768px) {
   .cd-intro-content h1 {
-    font-size: 2.6rem;
+    font-size: 3rem;
     font-weight: 300;
   }
   .cd-intro-content p {
@@ -89,7 +95,7 @@ General Style
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1px;
-  background-color: #202e4a;
+  background-color: #ffffff;
   border-radius: .25em;
   margin-right: 1.5em;
 }
