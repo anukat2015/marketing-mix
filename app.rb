@@ -11,6 +11,7 @@ post '/' do
 	@answers = { :q1 => params[:q1], :q2 => params[:q2], :q3 => params[:q3], :q4 => params[:q4], :q5 => params[:q5], :q6 => params[:q6] }
   puts @answers
 	@@results = calculate_final_score(@answers)
+  puts @@results
 	redirect('/results')
 end
 
