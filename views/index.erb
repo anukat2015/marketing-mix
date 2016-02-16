@@ -7,7 +7,6 @@
 		<title>Marketing Mix Tool | Dozen Digital</title>
 
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" type="text/css" href="bouncy.css">
 		<link rel="stylesheet" type="text/css" href="normalize.css">
 		<link rel="stylesheet" type="text/css" href="foundation.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -17,7 +16,7 @@
 
 	<body>
 
-		<section class="cd-intro">
+		<section class="cd-intro" id="title">
 			<div class="cd-intro-content bouncy">
 				<h1>What's My Marketing Mix?</h1>
 				<p>Identify the most important channels for marketing your product</p>
@@ -28,11 +27,12 @@
 		</section>
 
 		<form action="/" method="POST" id="quiz">
-			<div class="container" id="q1">
-				<div class="row wrapper">
-					<div class="large-12 columns content">
-						<span class="question">What is your revenue model?</span>
-						<div>
+
+			<section class="cd-intro" id="q1">
+				<div class="cd-intro-content">
+					<h1>What is your revenue model?</h1>
+					<p>&nbsp;</p>
+					<div>
 							<input type="radio" name="q1" value="ecommerce" id="ecommerce1">
 							<label for="ecommerce1">ECommerce</label>
 							<input type="radio" name="q1" value="marketplace" id="marketplace1">
@@ -47,89 +47,88 @@
 							<label for="agency1">Agency</label>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="container" id="q2">
-				<div class="row wrapper">
-					<div class="large-12 columns content">
-						<span class="question">Who do you sell to?</span>
-						<div>
-							<input type="radio" name="q2" value="businesses" id="businesses2">
-							<label for="businesses2">Businesses</label>
-							<input type="radio" name="q2" value="consumers" id="consumers2">
-							<label for="consumers2">Consumers</label>
-						</div>
+			</section>
+
+			<section class="cd-intro" id="q2">
+				<div class="cd-intro-content">
+					<h1>Who do you sell to?</h1>
+					<p>&nbsp;</p>
+					<div>
+						<input type="radio" name="q2" value="businesses" id="businesses2">
+						<label for="businesses2">Businesses</label>
+						<input type="radio" name="q2" value="consumers" id="consumers2">
+						<label for="consumers2">Consumers</label>
 					</div>
 				</div>
-			</div>
-			<div class="container" id="q3">
-				<div class="row wrapper">
-					<div class="large-12 columns content">
-						<span class="question">What is your estimated customer lifetime value?</span>
-						<div>
-							<input type="radio" name="q3" value="lessthan5" id="lessthan5">
-							<label for="lessthan5"><$5</label>
-							<input type="radio" name="q3" value="5to100" id="5to100">
-							<label for="5to100">Between $5 and $100</label>
-							<input type="radio" name="q3" value="100to1000" id="100to1000">
-							<label for="100to1000">Between $100 and $1000</label>
-							<input type="radio" name="q3" value="morethan1000" id="morethan1000">
-							<label for="morethan1000">>$1000</label>
-						</div>
+			</section>
+
+			<section class="cd-intro" id="q3">
+				<div class="cd-intro-content">
+					<h1>What is your estimated customer lifetime value?</h1>
+					<p>&nbsp;</p>
+					<div>
+						<input type="radio" name="q3" value="lessthan5" id="lessthan5">
+						<label for="lessthan5"><$5</label>
+						<input type="radio" name="q3" value="5to100" id="5to100">
+						<label for="5to100">Between $5 and $100</label>
+						<input type="radio" name="q3" value="100to1000" id="100to1000">
+						<label for="100to1000">Between $100 and $1000</label>
+						<input type="radio" name="q3" value="morethan1000" id="morethan1000">
+						<label for="morethan1000">>$1000</label>
 					</div>
 				</div>
-			</div>
-			<div class="container" id="q4">
-				<div class="row wrapper">
-					<div class="large-12 columns content">
-						<span class="question">How competitive is your industry?</span>
-						<div>
-							<input type="radio" name="q4" value="low" id="low4">
-							<label for="low4">Low</label>
-							<input type="radio" name="q4" value="false" id="medium4">
-							<label for="medium4">Medium</label>
-							<input type="radio" name="q4" value="false" id="high4">
-							<label for="high4">High</label>
-						</div>
+			</section>
+
+			<section class="cd-intro" id="q4">
+				<div class="cd-intro-content">
+					<h1>How competitive is your industry?</h1>
+					<p>&nbsp;</p>
+					<div>
+						<input type="radio" name="q4" value="low" id="low4">
+						<label for="low4">Low</label>
+						<input type="radio" name="q4" value="false" id="medium4">
+						<label for="medium4">Medium</label>
+						<input type="radio" name="q4" value="false" id="high4">
+						<label for="high4">High</label>
 					</div>
 				</div>
-			</div>
-			<div class="container" id="q5">
-				<div class="row wrapper">
-					<div class="large-12 columns content">
-						<span class="question">Has your company raised venture capital?</span>
-						<div>
-							<input type="radio" name="q5" value="true" id="yes5">
-							<label for="yes5">Yes</label>
-							<input type="radio" name="q5" value="false" id="no5">
-							<label for="no5">No</label>
-						</div>
+			</section>
+
+			<section class="cd-intro" id="q5">
+				<div class="cd-intro-content">
+					<h1>Has your company raised venture capital?</h1>
+					<p>&nbsp;</p>
+					<div>
+						<input type="radio" name="q5" value="true" id="yes5">
+						<label for="yes5">Yes</label>
+						<input type="radio" name="q5" value="false" id="no5">
+						<label for="no5">No</label>
 					</div>
 				</div>
-			</div>
-			<div class="container" id="q6">
-				<div class="row wrapper">
-					<div class="large-12 columns content">
-						<span class="question">Is your company currently profitable?</span>
-						<div>
-							<input type="radio" name="q6" value="true" id="yes6">
-							<label for="yes6">Yes</label>
-							<input type="radio" name="q6" value="false" id="no6">
-							<label for="no6">No</label>
-						</div>
+			</section>
+
+			<section class="cd-intro" id="q6">
+				<div class="cd-intro-content">
+					<h1>Is your company currently profitable?</h1>
+					<p>&nbsp;</p>
+					<div>
+						<input type="radio" name="q6" value="true" id="yes6">
+						<label for="yes6">Yes</label>
+						<input type="radio" name="q6" value="false" id="no6">
+						<label for="no6">No</label>
 					</div>
 				</div>
-			</div>
-			<div class="container" id="q7">
-				<div class="row wrapper">
-					<div class="large-12 columns content">
-						<span class="question">Ready to submit your answers?</span>
-						<div class="row text-center">
-							<button type="submit">Give Me My Results!</button>
-						</div>
+			</section>
+
+			<section class="cd-intro" id="q7">
+				<div class="cd-intro-content">
+					<h1>Ready to submit your answers?</h1>
+					<p>&nbsp;</p>
+					<div class="row text-center">
+						<button type="submit">Give Me My Results!</button>
 					</div>
 				</div>
-			</div>
+			</section>
 		</form>
 
 		<script src="js/vendor/jquery.js"></script>

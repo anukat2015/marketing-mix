@@ -35,7 +35,6 @@ General Style
   width: 100%;
   /* vertically align its content */
   display: table;
-  background: #fffcf5;
   overflow: hidden;
 }
 
@@ -45,11 +44,10 @@ General Style
   vertical-align: middle;
   text-align: center;
   padding: 0 5%;
-  background: #fffcf5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.cd-intro-content h1 {
+.cd-intro-content .bouncy h1 {
   font-size: 1.4rem;
   color: #333333;
 }
@@ -73,6 +71,10 @@ General Style
 }
 
 .cd-intro-content .action-wrapper a:hover, .cd-intro-content .action-wrapper a:visited, .cd-intro-content .action-wrapper a:active {
+  color: #ffffff;
+}
+
+form#quiz .cd-intro-content h1 {
   color: #ffffff;
 }
 
@@ -116,10 +118,10 @@ General Style
   }
 }
 
-.cd-intro-content h1,
-.cd-intro-content h1 span,
-.cd-intro-content p,
-.cd-intro-content .cd-btn {
+#title .cd-intro-content h1,
+#title .cd-intro-content h1 span,
+#title .cd-intro-content p,
+#title .cd-intro-content .cd-btn {
   opacity: 0;
   -webkit-animation-duration: 0.8s;
   -moz-animation-duration: 0.8s;
