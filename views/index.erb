@@ -32,21 +32,22 @@
 				<div class="cd-intro-content">
 					<h1>What is your revenue model?</h1>
 					<p>&nbsp;</p>
-					<div>
-							<input type="radio" name="q1" value="ecommerce" id="ecommerce1">
-							<label for="ecommerce1">ECommerce</label>
-							<input type="radio" name="q1" value="marketplace" id="marketplace1">
-							<label for="marketplace1">Marketplace</label>
-							<input type="radio" name="q1" value="advertising" id="advertising1">
-							<label for="advertising1">Advertising Supported</label>
-							<input type="radio" name="q1" value="software" id="software1">
-							<label for="software1">Software Sales</label>
-							<input type="radio" name="q1" value="app" id="app1">
-							<label for="app1">App Sales</label>
-							<input type="radio" name="q1" value="agency" id="agency1">
-							<label for="agency1">Agency</label>
+					<div class="row">
+						<div class="large-3 medium-2 columns">&nbsp;</div>
+						<div class="large-6 medium-8 columns">
+							<select name="q1">
+								<option selected="true" disabled="disabled"></option>
+								<option value="ecommerce">E-Commerce</option>
+								<option value="marketplace">Marketplace</option>
+								<option value="advertising">Advertising-Supported</option>
+								<option value="software">Software Sales</option>
+								<option value="app">App Sales</option>
+								<option value="agency">Agency</option>
+							</select>
 						</div>
+						<div class="large-3 medium-2 columns">&nbsp;</div>
 					</div>
+				</div>
 			</section>
 
 			<section class="cd-intro" id="q2">
@@ -66,15 +67,18 @@
 				<div class="cd-intro-content">
 					<h1>What is your estimated customer lifetime value?</h1>
 					<p>&nbsp;</p>
-					<div>
-						<input type="radio" name="q3" value="lessthan5" id="lessthan5">
-						<label for="lessthan5"><$5</label>
-						<input type="radio" name="q3" value="5to100" id="5to100">
-						<label for="5to100">Between $5 and $100</label>
-						<input type="radio" name="q3" value="100to1000" id="100to1000">
-						<label for="100to1000">Between $100 and $1000</label>
-						<input type="radio" name="q3" value="morethan1000" id="morethan1000">
-						<label for="morethan1000">>$1000</label>
+					<div class="row">
+						<div class="large-3 medium-2 columns">&nbsp;</div>
+						<div class="large-6 medium-8 columns">
+							<select name="q3">
+								<option selected="true" disabled="disabled"></option>
+								<option value="lessthan5">Less than $5</option>
+								<option value="5to100">Between $5 and $100</option>
+								<option value="100to1000">Between $100 and $1000</option>
+								<option value="morethan1000">More than $1000</option>
+							</select>
+						</div>
+						<div class="large-3 medium-2 columns">&nbsp;</div>
 					</div>
 				</div>
 			</section>
@@ -83,13 +87,17 @@
 				<div class="cd-intro-content">
 					<h1>How competitive is your industry?</h1>
 					<p>&nbsp;</p>
-					<div>
-						<input type="radio" name="q4" value="low" id="low4">
-						<label for="low4">Low</label>
-						<input type="radio" name="q4" value="false" id="medium4">
-						<label for="medium4">Medium</label>
-						<input type="radio" name="q4" value="false" id="high4">
-						<label for="high4">High</label>
+					<div class="row">
+						<div class="large-3 medium-2 columns">&nbsp;</div>
+						<div class="large-6 medium-8 columns">
+							<select name="q4">
+								<option selected="true" disabled="disabled"></option>
+								<option value="low4">Low</option>
+								<option value="medium4">Medium</option>
+								<option value="high4">High</option>
+							</select>
+						</div>
+						<div class="large-3 medium-2 columns">&nbsp;</div>
 					</div>
 				</div>
 			</section>
@@ -123,7 +131,6 @@
 			<section class="cd-intro" id="q7">
 				<div class="cd-intro-content">
 					<h1>Ready to submit your answers?</h1>
-					<p>&nbsp;</p>
 					<div class="row text-center">
 						<button type="submit">Give Me My Results!</button>
 					</div>

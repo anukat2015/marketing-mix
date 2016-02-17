@@ -12,6 +12,21 @@ $(document).ready(function (){
             }, 800);
         });
     });
+    $("select[name='q1']").change(function(e){
+         $('html, body').animate({
+                scrollTop: $("#q2").offset().top
+            }, 800);
+     });
+    $("select[name='q3']").change(function(e){
+         $('html, body').animate({
+                scrollTop: $("#q4").offset().top
+            }, 800);
+     });
+    $("select[name='q4']").change(function(e){
+         $('html, body').animate({
+                scrollTop: $("#q5").offset().top
+            }, 800);
+     });
     var winHeight = $(window).height(), 
       docHeight = $(document).height(),
       progressBar = $('progress'),

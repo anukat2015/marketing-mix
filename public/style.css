@@ -18,72 +18,27 @@
 	src: url(./fonts/Proxima-Bold.otf);
 }
 
-#dummybodyid {
-	padding: 0;
-	margin: 0;
+*, *::after, *::before {
+  box-sizing: border-box;
 }
 
-.sub-nav li {
-	width: 30px;
-	margin-left: 0px;
+html {
+  font-size: 62.5%;
 }
 
-.container {
-	width: 100%;
-	height: 110%;
-	text-align: center;
-	position: relative;
-	font-size: 2.5em;
-	font-family: 'Proxima Nova', sans-serif;
-	font-weight: bold;
-	overflow-y: scroll;
+body {
+  font-size: 1.6rem;
+  font-family: 'Proxima Nova', sans-serif;
+  color: #ffffff;
+  background-color: #ffffff;
 }
 
-.container.title {
-	background-color: #fffcf5;
+a {
+  color: #ffffff;
+  text-decoration: none;
 }
 
-.container.results {
-	background-color: #fffcf5;
-	padding-top: 5rem;
-}
-
-.wrapper {
-	position: relative;
-	top: 40%;
-}
-
-.header {
-	font-family: 'Proxima Nova', sans-serif;
-	font-weight: bold;
-}
-
-.quiz-explanation {
-	font-family: 'Proxima Nova', sans-serif;
-	font-weight: 300;
-	font-size: 1rem;
-}
-/*
-#down img {
-	-webkit-transition: all 200ms ease-in-out;
-	-moz-transition: all 200ms ease-in-out;
-	-ms-transition: all 200ms ease-in-out;
-	-o-transition: all 200ms ease-in-out;
-	transition: all 200ms ease-in-out;
-	cursor: pointer;
-	cursor: hand;
-}
-
-#down img:hover {
-	-webkit-transform: translate3d(0, 5px, 0);
-	-moz-transform: translate3d(0, 5px, 0);
-	-ms-transform: translate3d(0, 5px, 0);
-}*/
-
-#quiz {
-	position: relative;
-	height: 100%;
-}
+/** Index **/
 
 #title {
 	background: #fffcf5;
@@ -100,17 +55,17 @@
 }
 
 #q3 {
-	background-color: #907172;
+	background-color: #2b334f;
 	color: #ffffff;
 }
 
 #q4 {
-	background-color: #167c80;
+	background-color: #70557e;
 	color: #ffffff;
 }
 
 #q5 {
-	background-color: #74525f;
+	background-color: #fcb052;
 	color: #ffffff;
 }
 
@@ -120,13 +75,8 @@
 }
 
 #q7 {
-	background-color: #2c3e50;
+	background-color: #167c80;
 	color: #ffffff;
-}
-
-.question {
-	display: inline-block;
-	margin-bottom: 1em;
 }
 
 label {
@@ -160,86 +110,6 @@ button[type=submit] {
 	margin-top: 3em;
 }
 
-#score_chart {
-	margin-top: 3rem;
-	margin-bottom: 3rem;
-}
-
-.results .button {
-	width: 180px;
-	font-size: 1rem;
-	font-family: 'Proxima Nova';
-	font-style: normal;
-	font-weight: 500;
-}
-
-#results-explanation, #results-explanation-mobile-only {
-	font-size: 1rem;
-	font-family: 'Proxima Nova';
-	font-style: normal;
-	font-weight: 500;
-}
-
-#results-explanation-mobile-only {
-	display: none;
-}
-
-@media only screen and (max-device-width: 480px) {
-
-   .container {
-   	font-size: 1.5em;
-   }
-
-   .header {
-   	font-size: 1.5em;
-   }
-
-   .wrapper {
-	position: relative;
-	top: 30%;
-	}
-
-	#results-explanation {
-		display: none;
-	}
-
-	#results-explanation-mobile-only {
-		display: block;
-
-	}
-}
-
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
-*, *::after, *::before {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-size: 1.6rem;
-  font-family: 'Proxima Nova', sans-serif;
-  color: #ffffff;
-  background-color: #ffffff;
-}
-
-a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-
-/* -------------------------------- 
-
-General Style
-
--------------------------------- */
 .cd-intro {
   position: relative;
   height: 100vh;
@@ -354,11 +224,8 @@ form#quiz .cd-intro-content h1 {
   opacity: 1;
 }
 
-/* -------------------------------- 
+/** Bouncy animation effect **/
 
-Bouncy 
-
--------------------------------- */
 .bouncy.cd-intro-content h1 {
   -webkit-animation-name: cd-bounce-right;
   -moz-animation-name: cd-bounce-right;
@@ -563,4 +430,71 @@ Bouncy
     -o-transform: perspective(800px) rotateX(0);
     transform: perspective(800px) rotateX(0);
   }
+}
+
+/** Results Page **/
+
+.container {
+    text-align: center;
+    font-size: 2.5em;
+    font-family: 'Proxima Nova',sans-serif;
+}
+
+.container.results {
+    background-color: #fffcf5;
+    padding-top: 3rem;
+}
+
+.header.panel {
+    margin: 3rem auto;
+    border: 2px solid #444;
+    background: #fff;
+}
+
+.header.panel p {
+    font: 1rem;
+    padding: 1rem 2rem 2rem;
+    margin-top: -1.25rem;
+}
+
+.header.panel p span {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 75%;
+    font-weight: 700;
+}
+
+.header.panel .sign {
+    width: 150px;
+    height: 2.4rem;
+    border: 2px solid #444;
+    position: relative;
+    top: -2.5rem;
+    margin: auto;
+    display: table;
+    overflow: hidden;
+}
+
+.header.panel .sign.high {
+    background: #EE585C;
+}
+
+.header.panel .sign.medium {
+    background: #f48b8e;
+}
+
+.header.panel .sign.low {
+    background: #fad1d2;
+}
+
+.header.panel .sign h1 {
+    text-transform: uppercase;
+    font: bolder .875rem 'Proxima Nova' !important;
+    letter-spacing: 2px;
+    color: #fff;
+    font-size: 70%;
+    text-align: center;
+    line-height: 2rem;
+    display: table-cell;
+    vertical-align: middle;
 }
