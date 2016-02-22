@@ -25,36 +25,41 @@
 				<div class="large-2 columns">&nbsp;</div>
 			</div>
 			<div class="row">
-			  <div class="large-12 columns">
 
-			    <div class="header panel">
-			      <div class="sign high">
-			        <h1>High Priority</h1>
-			      </div>
-			      <p><span>Content Marketing</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			    </div>
-			  
-			  </div>
-			  <div class="large-12 columns">
+				<% high_channels = results.select{|k, v| v[:importance] =="high"} %>
+				<% results.each do | k, v| %>
+					<% if v[:importance] == 1 %>
+						<div class="large-12 columns">
+						    <div class="header panel">
+						      <div class="sign high">
+						        <h1>High Priority</h1>
+						      </div>
+						      <p><span><%= v[:name] %></span><br><%= v[:description] %></p>
+						    </div>
+						</div>
+					<% end %>
+					<% if v[:importance] == 2 %>
+						<div class="large-12 columns">
+						    <div class="header panel">
+						      <div class="sign medium">
+						        <h1>Medium Priority</h1>
+						      </div>
+						      <p><span><%= v[:name] %></span><br><%= v[:description] %></p>
+						    </div>
+					  	</div>
+					<% end %>
+					<% if v[:importance] == 3 %>
+						<div class="large-12 columns">
+						    <div class="header panel">
+						      <div class="sign low">
+						        <h1>Low Priority</h1>
+						      </div>
+						      <p><span><%= v[:name] %></span><br><%= v[:description] %></p>
+						    </div>
+					  	</div>
+					<% end %>
+				<% end %>
 
-			    <div class="header panel">
-			      <div class="sign medium">
-			        <h1>Medium Priority</h1>
-			      </div>
-			      <p><span>Content Marketing</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			    </div>
-			  
-			  </div>
-			  <div class="large-12 columns">
-
-			    <div class="header panel">
-			      <div class="sign low">
-			        <h1>Low Priority</h1>
-			      </div>
-			      <p><span>Content Marketing</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			    </div>
-			  
-			  </div>
 			</div>
 
 			<div class="row text-center">

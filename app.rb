@@ -21,7 +21,7 @@ end
 
 get '/pdf' do
   content_type('application/pdf')
-  headers['Cache-Control'] = "public, max-age=6000000000000000000"
+  # headers['Cache-Control'] = "public, max-age=6000000000000000000"
 
   pdf = Prawn::Document.new
   set_font(pdf)
