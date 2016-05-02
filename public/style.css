@@ -147,6 +147,10 @@ label {
 	text-transform: uppercase;
 }
 
+.cd-intro label{
+  font-size: 1rem;
+}
+
 label a {
 	color: #4d4d4d;
 }
@@ -192,13 +196,13 @@ button[type=submit] {
   -moz-osx-font-smoothing: grayscale;
 }
 .cd-intro-content h1 {
-  font-size: 1.4rem;
+  font-size: 2.5rem;
   color: #333333;
   font-family: 'Proxima Nova', sans-serif;
   font-weight: 700;
 }
 .cd-intro-content p {
-  font-size: 1rem;
+  font-size: 1.4rem;
   font-weight: 500;
   line-height: 1.4;
   margin: 1em 0;
